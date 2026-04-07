@@ -92,7 +92,7 @@ const TeaBagSelector = () => {
   return (
     <div className="flex flex-col items-center gap-12">
       {/* Tea bags */}
-      <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 px-4 max-w-2xl">
+      <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 px-4">
         {categories.map((cat, i) => (
           <TeaBag key={cat.id} category={cat} index={i} onSelect={handleSelect} isAnimating={phase !== "idle"} />
         ))}
