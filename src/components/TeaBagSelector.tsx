@@ -19,6 +19,10 @@ const teaBagPaths: Record<string, { body: string; accent: string }> = {
     body: "M15 32 Q15 28, 20 28 L40 28 Q45 28, 45 32 L45 75 Q45 78, 40 78 L20 78 Q15 78, 15 75Z",
     accent: "M24 40 Q30 48, 36 40 M24 55 Q30 63, 36 55 M28 68 L32 68",
   },
+  design: {
+    body: "M14 33 Q14 29, 19 29 L41 29 Q46 29, 46 33 L46 74 Q46 78, 41 78 L19 78 Q14 78, 14 74Z",
+    accent: "M20 42 L40 42 L40 62 L20 62 Z M24 50 L36 54",
+  },
   photography: {
     body: "M14 35 L14 73 Q14 78, 19 78 L41 78 Q46 78, 46 73 L46 35 Q46 30, 41 30 L19 30 Q14 30, 14 35Z",
     accent: "M22 42 L38 50 M22 50 L38 58 M22 58 L38 66",
