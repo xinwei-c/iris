@@ -123,19 +123,19 @@ const ProjectsPage = () => {
                 <div
                   key={project.id}
                   onClick={() => navigate(`/project/${project.id}`)}
-                  className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in cursor-pointer"
+                  className="group rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 bg-card animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
                   {(() => {
                     const previewImage = extractFirstMarkdownImage(project.content) || project.image;
 
                     return (
-                      <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
+                      <div className="aspect-[16/10] bg-muted flex items-center justify-center overflow-hidden">
                         {previewImage ? (
                           <img
                             src={previewImage}
                             alt={project.title}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                             loading="lazy"
                           />
                         ) : (
@@ -144,24 +144,27 @@ const ProjectsPage = () => {
                       </div>
                     );
                   })()}
-                  <h3 className="text-lg text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex gap-2 mt-4 flex-wrap">
-                    {project.tags.map((t) => {
-                      const cat = categories.find((c) => c.id === t);
-                      return (
-                        <span
-                          key={t}
-                          className="text-[10px] tracking-wider px-2 py-1 rounded-full border border-border text-muted-foreground"
-                        >
-                          {cat?.label || t}
-                        </span>
-                      );
-                    })}
+                  <div className="p-5">
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors leading-tight">
+                      {project.title}
+                    </h3>
+                    <div className="flex gap-2 mt-3 flex-wrap">
+                      {project.tags.map((t) => {
+                        const cat = categories.find((c) => c.id === t);
+                        return (
+                          <span
+                            key={t}
+                            className="text-[10px] tracking-widest uppercase px-3 py-1 rounded-full border border-border text-muted-foreground"
+                          >
+                            {cat?.label || t}
+                          </span>
+                        );
+                      })}
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
+                    <p className="text-[10px] tracking-widest text-muted-foreground/60 mt-4 uppercase">Iris Chen</p>
                   </div>
                 </div>
               ))}
