@@ -11,6 +11,10 @@ const PhotographyPage = () => {
   const [search, setSearch] = useState("");
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const filtered = photoSeries.filter(
     (s) =>
       s.title.toLowerCase().includes(search.toLowerCase()) ||
