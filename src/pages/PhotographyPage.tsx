@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Search, Camera } from "lucide-react";
 
 const PhotographyPage = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
