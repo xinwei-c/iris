@@ -29,9 +29,12 @@ const ProjectDetailPage = () => {
   const primaryTag = project.tags[0];
   const cat = categories.find((c) => c.id === primaryTag);
 
-  // Extract first image from markdown content
+  // Extract first image from markdown content and remove it from body
   const firstImageMatch = project.content?.match(/!\[.*?\]\((.*?)\)/);
   const heroImage = project.image || (firstImageMatch ? firstImageMatch[1] : null);
+  const contentWithoutHero = heroImage && !project.image && project.content
+    ? project.content.replace(/!\[.*?\]\(.*?\)\n?/, '')
+    : project.content;
 
   return (
     <div className="min-h-screen bg-background">
