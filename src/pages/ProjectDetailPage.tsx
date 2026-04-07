@@ -94,24 +94,6 @@ const ProjectDetailPage = () => {
               </p>
             </div>
           )}
-
-          {/* Tools */}
-          {project.tools && project.tools.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-border">
-              <h2 className="font-serif-cn text-lg mb-4">Tools & Technologies</h2>
-              <div className="flex gap-2 flex-wrap">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="text-xs px-3 py-1.5 rounded-full bg-muted text-muted-foreground"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
         </div>
       </section>
 
