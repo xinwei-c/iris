@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { categories, projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Newspaper, Megaphone, BarChart3, Brain, Camera } from "lucide-react";
+import { Camera, Newspaper, Megaphone, BarChart3, Brain } from "lucide-react";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   journalism: <Newspaper size={18} />,
