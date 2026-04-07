@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { categories, projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const ProjectsPage = () => {
   const { tag } = useParams<{ tag: string }>();
@@ -137,6 +138,7 @@ const ProjectsPage = () => {
           )}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
