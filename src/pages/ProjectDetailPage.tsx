@@ -31,7 +31,7 @@ const ProjectDetailPage = () => {
   const normalizedContent = project.content?.trimStart();
   const firstImageMatch = normalizedContent?.match(/^\s*!\[[^\]]*\]\(([^)]+)\)/m);
   const markdownHeroImage = firstImageMatch ? firstImageMatch[1] : null;
-  const heroImage = project.image || markdownHeroImage;
+  const heroImage = markdownHeroImage || project.image;
   const contentWithoutHero = normalizedContent
     ? normalizedContent.replace(/^\s*!\[[^\]]*\]\([^)]+\)\s*\n*/m, '')
     : normalizedContent;
