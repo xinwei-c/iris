@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
+    --background: 60 100% 99%;
     --foreground: 240 8% 30%;
-    --heading: 345 45% 60%;
+    --heading: 340 82% 78%;
     --heading-secondary: 210 35% 75%;
 
     --card: 35 10% 92%;
@@ -157,4 +157,19 @@
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(340 60% 95%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(340 60% 85%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(340 60% 78%);
 }
