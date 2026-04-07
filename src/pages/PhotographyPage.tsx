@@ -37,7 +37,7 @@ const PhotographyPage = () => {
         <div className="max-w-6xl mx-auto text-center animate-fade-in">
           <p className="text-sm tracking-[0.3em] text-muted-foreground mb-5 flex items-center justify-center gap-2">
             <Camera size={18} />
-            CHAI TEA
+            紅茶 · RED TEA
           </p>
           <h1 className="font-serif-cn text-5xl md:text-6xl font-light mb-8">
             Photography
