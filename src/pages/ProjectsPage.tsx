@@ -11,6 +11,8 @@ const ProjectsPage = () => {
     ? projects.filter((p) => p.tags.includes(tag))
     : projects;
 
+  const isPhotography = tag === "photography";
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -50,43 +52,71 @@ const ProjectsPage = () => {
         </div>
       </div>
 
-      {/* Projects grid */}
+      {/* Projects */}
       <section className="px-6 py-12">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredProjects.map((project, i) => (
-              <div
-                key={project.id}
-                className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
-                  <span className="text-muted-foreground text-sm">
+          {isPhotography ? (
+            /* Gallery / masonry layout for Photography */
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+              {filteredProjects.map((project, i) => (
+                <div
+                  key={project.id}
+                  className="break-inside-avoid group cursor-pointer overflow-hidden rounded-lg animate-fade-in"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  {/* Placeholder image with varying heights for gallery feel */}
+                  <div
+                    className="bg-muted flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
+                    style={{ height: `${200 + (i % 3) * 80}px` }}
+                  >
+                    <span className="text-muted-foreground text-sm">{project.title}</span>
+                  </div>
+                  <div className="py-3">
+                    <h3 className="text-sm text-foreground group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">{project.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* Standard card grid for other categories */
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filteredProjects.map((project, i) => (
+                <div
+                  key={project.id}
+                  className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                >
+                  <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
+                    <span className="text-muted-foreground text-sm">
+                      {project.title}
+                    </span>
+                  </div>
+                  <h3 className="text-lg text-foreground group-hover:text-primary transition-colors">
                     {project.title}
-                  </span>
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex gap-2 mt-4 flex-wrap">
+                    {project.tags.map((t) => {
+                      const cat = categories.find((c) => c.id === t);
+                      return (
+                        <span
+                          key={t}
+                          className="text-[10px] tracking-wider px-2 py-1 rounded-full border border-border text-muted-foreground"
+                        >
+                          {cat?.label || t}
+                        </span>
+                      );
+                    })}
+                  </div>
                 </div>
-                <h3 className="text-lg text-foreground group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex gap-2 mt-4 flex-wrap">
-                  {project.tags.map((t) => {
-                    const cat = categories.find((c) => c.id === t);
-                    return (
-                      <span
-                        key={t}
-                        className="text-[10px] tracking-wider px-2 py-1 rounded-full border border-border text-muted-foreground"
-                      >
-                        {cat?.label || t}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">

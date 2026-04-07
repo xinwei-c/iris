@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { categories, type TeaBagCategory } from "@/data/projects";
 
@@ -24,20 +25,23 @@ const teaBagPaths: Record<string, { body: string; accent: string }> = {
   },
 };
 
+type AnimPhase = "idle" | "dropping" | "steaming" | "pouring" | "done";
+
 interface TeaBagProps {
   category: TeaBagCategory;
   index: number;
+  onSelect: (category: TeaBagCategory) => void;
+  isAnimating: boolean;
 }
 
-const TeaBag = ({ category, index }: TeaBagProps) => {
-  const navigate = useNavigate();
+const TeaBag = ({ category, index, onSelect, isAnimating }: TeaBagProps) => {
   const paths = teaBagPaths[category.id];
   const delay = index * 0.15;
 
   return (
     <div
-      className="flex flex-col items-center cursor-pointer group"
-      onClick={() => navigate(`/projects/${category.id}`)}
+      className={`flex flex-col items-center cursor-pointer group ${isAnimating ? "pointer-events-none opacity-40" : ""}`}
+      onClick={() => onSelect(category)}
       style={{ animation: `float 3s ease-in-out ${delay}s infinite` }}
     >
       <svg
@@ -48,16 +52,11 @@ const TeaBag = ({ category, index }: TeaBagProps) => {
         xmlns="http://www.w3.org/2000/svg"
         className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"
       >
-        {/* String */}
         <line x1="30" y1="0" x2="30" y2="30" stroke={`hsl(${category.hsl})`} strokeWidth="1" opacity="0.6" />
-        {/* Tag */}
         <rect x="22" y="0" width="16" height="10" rx="2" stroke={`hsl(${category.hsl})`} strokeWidth="1" fill="none" opacity="0.8" />
-        {/* Tea bag body */}
         <path d={paths.body} stroke={`hsl(${category.hsl})`} strokeWidth="1.5" fill={`hsl(${category.hsl} / 0.08)`} />
-        {/* Inner pattern */}
         <path d={paths.accent} stroke={`hsl(${category.hsl})`} strokeWidth="0.8" opacity="0.4" fill="none" />
       </svg>
-      {/* Label */}
       <div className="mt-3 text-center transition-opacity duration-300 opacity-70 group-hover:opacity-100">
         <p className="text-[10px] text-muted-foreground tracking-wider mt-0.5">{category.teaType}</p>
         <p className="text-xs text-foreground font-medium mt-0.5">{category.label}</p>
@@ -67,11 +66,108 @@ const TeaBag = ({ category, index }: TeaBagProps) => {
 };
 
 const TeaBagSelector = () => {
+  const navigate = useNavigate();
+  const [phase, setPhase] = useState<AnimPhase>("idle");
+  const [selectedCat, setSelectedCat] = useState<TeaBagCategory | null>(null);
+
+  const handleSelect = (category: TeaBagCategory) => {
+    if (phase !== "idle") return;
+    setSelectedCat(category);
+    setPhase("dropping");
+    setTimeout(() => setPhase("steaming"), 1000);
+    setTimeout(() => setPhase("pouring"), 2200);
+    setTimeout(() => {
+      setPhase("done");
+      navigate(`/projects/${category.id}`);
+    }, 3800);
+  };
+
+  const color = selectedCat ? `hsl(${selectedCat.hsl})` : "hsl(var(--muted-foreground))";
+
   return (
-    <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 px-4">
-      {categories.map((cat, i) => (
-        <TeaBag key={cat.id} category={cat} index={i} />
-      ))}
+    <div className="flex flex-col items-center gap-12">
+      {/* Tea bags */}
+      <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 px-4">
+        {categories.map((cat, i) => (
+          <TeaBag key={cat.id} category={cat} index={i} onSelect={handleSelect} isAnimating={phase !== "idle"} />
+        ))}
+      </div>
+
+      {/* Tea ceremony animation area */}
+      {phase !== "idle" && (
+        <div className="relative flex flex-col items-center justify-center h-[280px] w-full max-w-xs animate-fade-in">
+          {/* Falling tea bag */}
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2"
+            style={{
+              animation: phase === "dropping" ? "teabag-drop 1s ease-out forwards" : "none",
+              opacity: phase === "dropping" ? 1 : 0,
+              transition: "opacity 0.3s",
+            }}
+          >
+            <svg width="40" height="70" viewBox="0 0 60 110" fill="none">
+              <line x1="30" y1="0" x2="30" y2="30" stroke={color} strokeWidth="1.5" />
+              <rect x="15" y="30" width="30" height="40" rx="3" stroke={color} strokeWidth="1.5" fill="none" />
+            </svg>
+          </div>
+
+          {/* Teapot */}
+          <div
+            className="absolute top-[40px] left-1/2 -translate-x-1/2"
+            style={{
+              animation: phase === "pouring" ? "pour-tea 1.6s ease-in-out" : "none",
+              transformOrigin: "right bottom",
+            }}
+          >
+            <svg width="120" height="90" viewBox="0 0 180 140" fill="none">
+              <ellipse cx="90" cy="95" rx="55" ry="40" stroke={color} strokeWidth="1.5" fill="none" />
+              <ellipse cx="90" cy="58" rx="35" ry="8" stroke={color} strokeWidth="1.5" fill="none" />
+              <line x1="90" y1="42" x2="90" y2="50" stroke={color} strokeWidth="1.5" />
+              <circle cx="90" cy="40" r="4" stroke={color} strokeWidth="1.5" fill="none" />
+              <path d="M145 85 Q165 75, 170 60" stroke={color} strokeWidth="1.5" fill="none" />
+              <path d="M35 75 Q10 85, 15 105 Q20 120, 40 110" stroke={color} strokeWidth="1.5" fill="none" />
+            </svg>
+
+            {/* Steam */}
+            {(phase === "steaming" || phase === "pouring") && (
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 flex gap-2">
+                {[0, 1, 2].map((i) => (
+                  <div
+                    key={i}
+                    className="w-0.5 h-5 rounded-full opacity-0"
+                    style={{
+                      backgroundColor: color,
+                      animation: `steam-rise 1.5s ease-out ${i * 0.3}s infinite`,
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Pour stream */}
+            {phase === "pouring" && (
+              <div
+                className="absolute right-0 top-[28px] w-[2px] h-12 rounded-full opacity-50"
+                style={{ backgroundColor: color, transform: "rotate(25deg)", transformOrigin: "top" }}
+              />
+            )}
+          </div>
+
+          {/* Cup */}
+          <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2">
+            <svg width="60" height="45" viewBox="0 0 80 60" fill="none">
+              <path d="M15 10 L20 50 Q40 58, 60 50 L65 10" stroke={color} strokeWidth="1.5" fill="none" />
+              <ellipse cx="40" cy="10" rx="25" ry="5" stroke={color} strokeWidth="1.5" fill="none" />
+              <path d="M65 18 Q80 22, 78 35 Q76 45, 65 42" stroke={color} strokeWidth="1.5" fill="none" />
+            </svg>
+          </div>
+
+          {/* Loading text */}
+          <p className="absolute bottom-0 text-xs text-muted-foreground tracking-widest animate-pulse">
+            Brewing...
+          </p>
+        </div>
+      )}
     </div>
   );
 };
