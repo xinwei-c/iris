@@ -36,7 +36,7 @@ const ProjectsPage = () => {
 
       {/* Category title & intro */}
       <section className="pt-32 pb-8 px-6">
-        <div className="max-w-6xl mx-auto text-center animate-fade-in">
+        <div key={tag} className="max-w-6xl mx-auto text-center animate-fade-in">
           {currentCategory && (
             <>
               <p className="text-sm tracking-[0.3em] text-muted-foreground mb-5 flex items-center justify-center gap-2">
