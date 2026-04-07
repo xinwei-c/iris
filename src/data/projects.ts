@@ -19,7 +19,7 @@ export const categories: TeaBagCategory[] = [
   {
     id: "journalism",
     label: "Journalism",
-    hsl: "155 14% 58%",
+    hsl: "155, 14%, 58%",
     teaType: "Green Tea",
     intro: "Stories that matter — investigative reports, editorial writing, and digital media projects that bring truth to light.",
     teaStory: "Like green tea, good journalism is pure and unadorned. It requires patience in the steeping, clarity in the pour, and a respect for the raw material. Each story brews slowly until it reveals its honest flavor.",
