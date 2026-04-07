@@ -33,13 +33,10 @@ const Index = () => {
           <div className="mt-6 flex gap-3 items-center justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="w-12 h-[1px] bg-primary" />
             <p className="text-lg text-muted-foreground tracking-[0.2em]">
-              Artistry
+              Journalism · Marketing · AI · Photography
             </p>
             <div className="w-12 h-[1px] bg-accent" />
           </div>
-          <p className="mt-6 text-muted-foreground text-sm tracking-wide max-w-md mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            Discovering beauty in stillness, feeling art in the details
-          </p>
         </div>
 
         {/* Scroll indicator */}
