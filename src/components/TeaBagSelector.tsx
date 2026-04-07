@@ -49,13 +49,13 @@ const TeaBag = ({ category, index }: TeaBagProps) => {
         className="transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"
       >
         {/* String */}
-        <line x1="30" y1="0" x2="30" y2="30" stroke={`hsl(${category.color})`} strokeWidth="1" opacity="0.6" />
+        <line x1="30" y1="0" x2="30" y2="30" stroke={`hsl(${category.hsl})`} strokeWidth="1" opacity="0.6" />
         {/* Tag */}
-        <rect x="22" y="0" width="16" height="10" rx="2" stroke={`hsl(${category.color})`} strokeWidth="1" fill="none" opacity="0.8" />
+        <rect x="22" y="0" width="16" height="10" rx="2" stroke={`hsl(${category.hsl})`} strokeWidth="1" fill="none" opacity="0.8" />
         {/* Tea bag body */}
-        <path d={paths.body} stroke={`hsl(${category.color})`} strokeWidth="1.5" fill={`hsl(${category.color} / 0.08)`} />
+        <path d={paths.body} stroke={`hsl(${category.hsl})`} strokeWidth="1.5" fill={`hsl(${category.hsl} / 0.08)`} />
         {/* Inner pattern */}
-        <path d={paths.accent} stroke={`hsl(${category.color})`} strokeWidth="0.8" opacity="0.4" fill="none" />
+        <path d={paths.accent} stroke={`hsl(${category.hsl})`} strokeWidth="0.8" opacity="0.4" fill="none" />
       </svg>
       {/* Label */}
       <div className="mt-3 text-center transition-opacity duration-300 opacity-70 group-hover:opacity-100">
