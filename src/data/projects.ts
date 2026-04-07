@@ -4,6 +4,8 @@ export interface Project {
   description: string;
   tags: string[];
   image?: string;
+  /** Markdown content for the detail page */
+  content?: string;
   details?: string;
   role?: string;
   year?: string;

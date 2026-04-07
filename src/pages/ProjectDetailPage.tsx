@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import { projects, categories } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
