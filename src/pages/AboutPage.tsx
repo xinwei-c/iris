@@ -1,7 +1,62 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+interface NewsItem {
+  date: string;
+  text: string;
+  link?: { label: string; url: string };
+}
+
+const recentNews: NewsItem[] = [
+  {
+    date: "July 15, 2025",
+    text: "Worked as New York Asian Film Festival Volunteer.",
+  },
+  {
+    date: "June 2, 2025",
+    text: "Started my summer internship at Smartly, working under the guidance of Alicia Mickelsen, VP of Growth Marketing and Strategy.",
+    link: { label: "Smartly", url: "https://www.smartly.io" },
+  },
+];
+
+const earlierNews: NewsItem[] = [
+  {
+    date: "December 2024",
+    text: "Completed my individual journalistic work exploring the evolution of liberal arts education at UW-Madison.",
+  },
+];
+
+const NewsCard = ({ item }: { item: NewsItem }) => (
+  <div className="border-l-4 border-[hsl(340,60%,80%)] bg-[hsl(35,40%,94%)] rounded-r-lg p-5">
+    <p className="font-bold text-foreground text-sm mb-1">{item.date}</p>
+    <p className="text-foreground text-sm leading-relaxed">
+      {item.link
+        ? item.text.split(item.link.label).map((part, i, arr) =>
+            i < arr.length - 1 ? (
+              <span key={i}>
+                {part}
+                <a
+                  href={item.link!.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[hsl(340,60%,70%)] underline hover:opacity-70"
+                >
+                  {item.link!.label}
+                </a>
+              </span>
+            ) : (
+              part
+            )
+          )
+        : item.text}
+    </p>
+  </div>
+);
+
 const AboutPage = () => {
+  const [showEarlier, setShowEarlier] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -31,17 +86,32 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { title: "Journalism", desc: "Editorial writing, investigative stories, and digital media." },
-              { title: "Analytics & AI", desc: "Data-driven insights, machine learning, and predictive modeling." },
-              { title: "Photography", desc: "Documentary, editorial, and fine art photography." },
-            ].map((item) => (
-              <div key={item.title} className="border border-border rounded-lg p-6">
-                <h3 className="text-foreground font-medium mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+          {/* News Section */}
+          <div className="mt-16">
+            <h2 className="font-serif-cn text-2xl text-foreground font-light mb-8">News</h2>
+            <div className="space-y-4">
+              {recentNews.map((item, i) => (
+                <NewsCard key={i} item={item} />
+              ))}
+            </div>
+
+            {earlierNews.length > 0 && (
+              <div className="mt-8">
+                <button
+                  onClick={() => setShowEarlier(!showEarlier)}
+                  className="text-sm font-medium text-foreground hover:opacity-70 transition-opacity"
+                >
+                  {showEarlier ? "▲" : "▼"} Show earlier news (before 2025)
+                </button>
+                {showEarlier && (
+                  <div className="space-y-4 mt-4 animate-fade-in">
+                    {earlierNews.map((item, i) => (
+                      <NewsCard key={i} item={item} />
+                    ))}
+                  </div>
+                )}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
