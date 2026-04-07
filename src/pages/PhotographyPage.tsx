@@ -50,6 +50,25 @@ const PhotographyPage = () => {
         </div>
       </section>
 
+      {/* Category tabs */}
+      <div className="px-6 border-b border-border">
+        <div className="max-w-5xl mx-auto flex gap-6 overflow-x-auto py-4 justify-center">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => navigate(`/projects/${cat.id}`)}
+              className={`text-sm transition-all duration-300 tracking-wide whitespace-nowrap pb-2 ${
+                cat.id === "photography"
+                  ? "text-foreground border-b-2 border-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Menu + Search */}
       <div className="sticky top-16 z-20 bg-background/90 backdrop-blur-sm border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center gap-4">
