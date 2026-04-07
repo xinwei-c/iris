@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { categories, type TeaBagCategory } from "@/data/projects";
 
@@ -74,6 +74,7 @@ const TeaBagSelector = () => {
   const navigate = useNavigate();
   const [phase, setPhase] = useState<AnimPhase>("idle");
   const [selectedCat, setSelectedCat] = useState<TeaBagCategory | null>(null);
+  const animRef = useRef<HTMLDivElement>(null);
 
   const handleSelect = (category: TeaBagCategory) => {
     if (phase !== "idle") return;
@@ -83,9 +84,15 @@ const TeaBagSelector = () => {
     setTimeout(() => setPhase("pouring"), 2200);
     setTimeout(() => {
       setPhase("done");
-      navigate(`/projects/${category.id}`);
+      setTimeout(() => navigate(`/projects/${category.id}`), 1800);
     }, 3800);
   };
+
+  useEffect(() => {
+    if (phase === "dropping" && animRef.current) {
+      animRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [phase]);
 
   const color = selectedCat ? `hsl(${selectedCat.hsl})` : "hsl(var(--muted-foreground))";
 
@@ -99,8 +106,8 @@ const TeaBagSelector = () => {
       </div>
 
       {/* Tea ceremony animation area */}
-      {phase !== "idle" && (
-        <div className="relative flex flex-col items-center justify-center h-[380px] w-full max-w-md animate-fade-in">
+      {phase !== "idle" && selectedCat && (
+        <div ref={animRef} className="relative flex flex-col items-center justify-center min-h-[480px] w-full max-w-lg animate-fade-in">
           {/* Falling tea bag */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2"
@@ -159,7 +166,7 @@ const TeaBagSelector = () => {
           </div>
 
           {/* Cup */}
-          <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2">
+          <div className="absolute bottom-[100px] left-1/2 -translate-x-1/2">
             <svg width="60" height="45" viewBox="0 0 80 60" fill="none">
               <path d="M15 10 L20 50 Q40 58, 60 50 L65 10" stroke={color} strokeWidth="1.5" fill="none" />
               <ellipse cx="40" cy="10" rx="25" ry="5" stroke={color} strokeWidth="1.5" fill="none" />
@@ -167,10 +174,26 @@ const TeaBagSelector = () => {
             </svg>
           </div>
 
-          {/* Loading text */}
-          <p className="absolute bottom-0 text-xs text-muted-foreground tracking-widest animate-pulse">
-            Brewing...
-          </p>
+          {/* Tea info text */}
+          <div className="absolute bottom-0 text-center px-4 w-full">
+            {phase === "done" ? (
+              <div className="animate-fade-in space-y-2">
+                <p className="text-lg font-serif-cn" style={{ color }}>
+                  {selectedCat.teaTypeCn} · {selectedCat.teaType}
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-sm mx-auto">
+                  {selectedCat.teaStory}
+                </p>
+                <p className="text-xs text-muted-foreground/50 tracking-widest mt-3 animate-pulse">
+                  Entering {selectedCat.label}...
+                </p>
+              </div>
+            ) : (
+              <p className="text-xs text-muted-foreground tracking-widest animate-pulse">
+                Brewing {selectedCat.teaTypeCn}...
+              </p>
+            )}
+          </div>
         </div>
       )}
     </div>
