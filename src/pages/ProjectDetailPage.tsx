@@ -29,6 +29,10 @@ const ProjectDetailPage = () => {
   const primaryTag = project.tags[0];
   const cat = categories.find((c) => c.id === primaryTag);
 
+  // Extract first image from markdown content
+  const firstImageMatch = project.content?.match(/!\[.*?\]\((.*?)\)/);
+  const heroImage = project.image || (firstImageMatch ? firstImageMatch[1] : null);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -77,10 +81,16 @@ const ProjectDetailPage = () => {
 
           <div className="w-12 h-[1px] bg-primary mb-10" />
 
-          {/* Hero image placeholder */}
-          <div className="aspect-[16/9] rounded-lg bg-muted mb-12 flex items-center justify-center">
-            <span className="text-muted-foreground text-sm">Project Image</span>
-          </div>
+          {/* Hero image */}
+          {heroImage ? (
+            <div className="aspect-[16/9] rounded-lg overflow-hidden mb-12">
+              <img src={heroImage} alt={project.title} className="w-full h-full object-cover" />
+            </div>
+          ) : (
+            <div className="aspect-[16/9] rounded-lg bg-muted mb-12 flex items-center justify-center">
+              <span className="text-muted-foreground text-sm">Project Image</span>
+            </div>
+          )}
 
           {/* Markdown content */}
           {project.content ? (
