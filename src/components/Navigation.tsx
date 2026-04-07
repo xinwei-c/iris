@@ -12,7 +12,7 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-[hsl(340,60%,95%)]/80">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-serif-cn text-lg tracking-widest text-foreground hover:opacity-70 transition-opacity">
+        <Link to="/" className="text-xl tracking-wide text-[hsl(340,60%,70%)] hover:opacity-70 transition-opacity" style={{ fontFamily: "'Dancing Script', cursive" }}>
           Iris Chen
         </Link>
         <div className="flex gap-8 items-center">
