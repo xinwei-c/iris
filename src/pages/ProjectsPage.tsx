@@ -6,6 +6,11 @@ import Navigation from "@/components/Navigation";
 const ProjectsPage = () => {
   const { tag } = useParams<{ tag: string }>();
   const navigate = useNavigate();
+  const titleRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [tag]);
 
   const currentCategory = categories.find((c) => c.id === tag);
   const filteredProjects = tag
