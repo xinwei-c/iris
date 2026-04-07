@@ -110,7 +110,7 @@ const TeaBagSelector = () => {
               transition: "opacity 0.3s",
             }}
           >
-            <svg width="40" height="70" viewBox="0 0 60 110" fill="none">
+            <svg width="60" height="100" viewBox="0 0 60 110" fill="none">
               <line x1="30" y1="0" x2="30" y2="30" stroke={color} strokeWidth="1.5" />
               <rect x="15" y="30" width="30" height="40" rx="3" stroke={color} strokeWidth="1.5" fill="none" />
             </svg>
