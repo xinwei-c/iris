@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --background: 35 15% 95%;
+    --background: 0 0% 96%;
     --foreground: 240 8% 30%;
-    --heading: 340 20% 68%;
+    --heading: 345 45% 60%;
     --heading-secondary: 210 35% 75%;
 
     --card: 35 10% 92%;
