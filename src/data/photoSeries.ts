@@ -1,3 +1,16 @@
+
+
+import peru1 from "@/assets/photography/peru/peru1.jpg";
+import peru2 from "@/assets/photography/peru/peru2.jpg";
+import peru3 from "@/assets/photography/peru/peru3.jpg";
+import peru4 from "@/assets/photography/peru/peru4.jpg";
+import peru5 from "@/assets/photography/peru/peru5.jpg";
+import peru6 from "@/assets/photography/peru/peru6.jpg";
+import peru7 from "@/assets/photography/peru/peru7.jpg";
+import peru8 from "@/assets/photography/peru/peru8.jpg";
+import peru9 from "@/assets/photography/peru/peru9.jpg";
+import peru10 from "@/assets/photography/peru/peru10.jpg";
+
 export interface PhotoSeries {
   id: string;
   title: string;
@@ -6,19 +19,35 @@ export interface PhotoSeries {
   year: string;
   location?: string;
   photoCount: number;
+  photos: { src: string; caption?: string }[];
 }
+
 
 export const photoSeries: PhotoSeries[] = [
   {
-    id: "quiet-hours",
-    title: "Quiet Hours",
-    subtitle: "4–6 AM across three cities",
+    id: "peru",
+    title: "Peru Wonders",
+    subtitle: "Travel to Peru",
     description:
-      "A documentary photography series capturing the stillness of cities between 4 and 6 AM. Shot over six months across Tokyo, Taipei, and Vancouver.",
-    year: "2025",
-    location: "Tokyo · Taipei · Vancouver",
-    photoCount: 8,
-  },
+      "Our meeting with lost Inka",
+    year: "2026",
+    location: "Peru",
+    photoCount: 10,
+    photos: [
+    { src: peru1 },
+    { src: peru2 },
+    { src: peru3 },
+    { src: peru4 },
+    { src: peru5 },
+    { src: peru6 },
+    { src: peru7 },
+    { src: peru8 },
+    { src: peru9 },
+    { src: peru10 },
+  ],
+},
+
+
   {
     id: "seasons-in-kyoto",
     title: "Seasons in Kyoto",
@@ -28,7 +57,10 @@ export const photoSeries: PhotoSeries[] = [
     year: "2024",
     location: "Kyoto",
     photoCount: 10,
+    photos: [], 
   },
+
+
   {
     id: "finding-light",
     title: "Finding Light",
@@ -38,15 +70,7 @@ export const photoSeries: PhotoSeries[] = [
     year: "2024",
     location: "Various",
     photoCount: 6,
+    photos: [], 
   },
-  {
-    id: "in-between",
-    title: "In Between",
-    subtitle: "Transit and transition",
-    description:
-      "Portraits of people in motion — on trains, in airports, at bus stops. The liminal spaces where we pause between destinations.",
-    year: "2023",
-    location: "Asia · North America",
-    photoCount: 7,
-  },
+  
 ];

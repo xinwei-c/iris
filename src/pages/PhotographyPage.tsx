@@ -132,27 +132,24 @@ const PhotographyPage = () => {
               </p>
             </div>
 
-            {/* Masonry grid */}
+      {/* Masonry grid */}
             <div className="columns-2 md:columns-3 gap-4 space-y-4">
-              {Array.from({ length: series.photoCount }).map((_, pi) => (
+              {series.photos.map((photo, pi) => (
                 <div
                   key={pi}
-                  className="break-inside-avoid rounded-lg bg-muted overflow-hidden group cursor-pointer animate-fade-in"
-                  style={{
-                    height: `${getPhotoHeight(si, pi)}px`,
-                    animationDelay: `${pi * 0.05}s`,
-                  }}
+                  className="break-inside-avoid rounded-lg overflow-hidden group cursor-pointer animate-fade-in"
                 >
-                  <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.03]">
-                    <span className="text-muted-foreground text-xs">
-                      {series.title} — {pi + 1}
-                    </span>
-                  </div>
+                  <img
+                    src={photo.src}
+                    alt={photo.caption || `${series.title} — ${pi + 1}`}
+                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
                 </div>
               ))}
             </div>
           </section>
         ))}
+
 
         {filtered.length === 0 && (
           <div className="text-center py-20">

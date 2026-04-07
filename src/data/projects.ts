@@ -47,7 +47,7 @@ export const categories: TeaBagCategory[] = [
     hsl: "210, 14%, 65%",
     teaType: "Oolong Tea",
     teaTypeCn: "青茶",
-    intro: "Data-driven insights, visualization, and predictive modeling that turn numbers into narratives and patterns into possibilities.",
+    intro: "Data insights, visualization, and predictive modeling that turn numbers into narratives and patterns into possibilities.",
     teaStory: "Oolong reveals hidden dimensions with each steeping.",
   },
   {
@@ -91,142 +91,80 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: "1",
-    title: "The Art of Data Storytelling",
+    title: "Campaign Efficacy and Engagement Analysis",
     excerpt: "How visualization transforms raw numbers into compelling narratives that drive decisions and inspire action.",
     date: "2026-03-15",
     tag: "analytics",
-    content: `Data without narrative is noise. The best visualizations don't just display information — they guide the viewer through a story with a beginning, middle, and end.
+    content: ` 
+    ## Introduction Text
+During my internship at Smartly as a Growth Marketing Intern, I volunteered to take on marketing analytics work to deepen my understanding of data-driven strategy. I analyzed internal campaign datasets to assess performance and audience engagement, providing timely reports and insights that supported the team’s optimization efforts. The data was processed in RStudio and visualized in Tableau, transforming campaign metrics into clear findings for strategies. The data is from 6Sense. To protect information security, the key axes have been masked.
 
-## Why Stories Matter in Data
+![ABM](/images/abm.png)
 
-Humans are wired for narrative. When we see a chart, we instinctively look for a plot: *What changed? Why? What happens next?* The role of a data storyteller is to make those answers effortless to find.
+## Basic steps in processing data
 
-## The Three Layers
+1. **Segment**: categorized campaigns based on their names:
+   - Audience Type: Hot / Warm / Unknown
+   - Focus Area: Flashtalking, GetDemo, etc.
 
-1. **Foundation** — Clean, accurate data that earns trust
-2. **Structure** — A visual hierarchy that guides the eye
-3. **Emotion** — Color, annotation, and pacing that create meaning
+2. **Visualize**
+   - Focused on key performance metrics: Spend and CTR
+   - Segmented results into account-based vs. general
 
-## A Practical Framework
-
-- Start with the insight, not the data
-- Remove everything that doesn't serve the story
-- Use annotation to bridge the gap between seeing and understanding
-
-> "The greatest value of a picture is when it forces us to notice what we never expected to see." — John Tukey
-
-## Reflection
-
-The best dashboards I've built weren't the most complex — they were the ones where someone looked at the screen and immediately said, *"Now I understand."*`,
+3. **Insights**
+    `,
   },
+
+
+
   {
     id: "2",
     title: "AI and the Future of Journalism",
     excerpt: "Exploring how machine learning tools are reshaping newsrooms without replacing the human voice.",
     date: "2026-02-28",
     tag: "ai",
-    content: `The newsroom of 2026 looks nothing like 2020, but not in the way most people predicted. AI didn't replace journalists — it gave them superpowers.
-
-## What AI Actually Does in Newsrooms
-
-- **Transcription & translation** at near-real-time speed
-- **Pattern detection** across thousands of public records
-- **Draft generation** for routine reports (earnings, weather, sports scores)
-
-## The Human Edge
-
-What AI can't do is just as important: it can't cultivate a source over coffee, feel the weight of a community's grief, or decide which story *matters* when everything is technically newsworthy.
-
-## Finding the Balance
-
-The journalists I admire most treat AI like a research assistant — tireless, fast, and literal. They ask better questions because the machine handles the grunt work.
-
-> "Technology is a useful servant but a dangerous master." — Christian Lous Lange
-
-## What's Next
-
-The next frontier isn't AI writing stories. It's AI helping journalists find stories that would otherwise stay hidden in data no human could process alone.`,
+    content: `
+    
+    ## Introduction
+    During my internship at Smartly as a Growth Marketing Intern, I volunteered to take on marketing analytics work to deepen my 
+    understanding of data-driven strategy. 
+    I analyzed internal campaign datasets to assess performance and audience engagement, providing timely reports and insights that supported the team’s 
+    optimization efforts. The data was processed in RStudio and visualized in Tableau, transforming campaign metrics into clear findings for strategies. The data is from 6Sense. 
+    To protect information security, the key axes have been masked.
+    
+    `,
   },
-  {
-    id: "3",
-    title: "Building Brands in the Age of Authenticity",
-    excerpt: "Why consumers now demand transparency, and how marketing can adapt without losing its creative edge.",
-    date: "2026-01-20",
-    tag: "marketing",
-    content: `The era of polished perfection is over. Today's consumers don't want to be *marketed to* — they want to be *understood*.
-
-## The Authenticity Paradox
-
-Here's the uncomfortable truth: authenticity can't be manufactured. The moment a brand tries to "be authentic," it often becomes the opposite. So how do you navigate this?
-
-## Three Principles That Work
-
-1. **Show the process, not just the product** — Behind-the-scenes content outperforms polished ads 3:1 in engagement
-2. **Admit what you're not** — Brands that acknowledge limitations earn more trust than those claiming to do everything
-3. **Let customers tell the story** — User-generated content feels real because it *is* real
-
-## Case Study: Lumina
-
-When we launched the Lumina campaign, we deliberately included prototype failures in the brand video. The response was overwhelming — people connected with the struggle, not just the success.
-
-## The Creative Opportunity
-
-Authenticity doesn't mean boring. It means finding the genuine drama in your brand's story and telling it with craft and care.`,
-  },
-  {
-    id: "4",
-    title: "Finding Light: A Photo Essay",
-    excerpt: "A visual meditation on how natural light transforms urban spaces throughout the day.",
-    date: "2025-12-10",
-    tag: "photography",
-    content: `Every city has two lives: the one we see in daylight, and the one that emerges in the hours between.
-
-## The Golden Hour Myth
-
-Photographers obsess over golden hour, but the most interesting light happens at times no one talks about — the flat grey of an overcast noon, the neon-soaked blue of 9 PM, the amber pools beneath street lamps at midnight.
-
-## What I Learned
-
-- **Light reveals character.** The same building at dawn and dusk tells two completely different stories.
-- **Shadows are subjects too.** Sometimes the absence of light is more expressive than its presence.
-- **Weather is a collaborator.** Rain, fog, and haze don't ruin a shot — they transform it.
-
-## On Patience
-
-The best photographs I've taken came from waiting. Not for the perfect light, but for the moment when light and life aligned — a figure stepping into a beam, a curtain catching wind, a puddle reflecting sky.
-
-> "Photography is the story I fail to put into words." — Destin Sparks`,
-  },
+  
 ];
 
 export const projects: Project[] = [
   {
     id: "1",
-    title: "News Analytics Dashboard",
-    description: "A real-time dashboard for tracking news trends and sentiment analysis across major outlets.",
-    tags: ["journalism", "analytics", "ai"],
-    role: "Lead Analyst & Developer",
-    year: "2026",
-    tools: ["Python", "D3.js", "NLP"],
-    content: `Built a comprehensive dashboard that tracks breaking news across 50+ outlets in real time.
+    title: "Campaign Efficacy and Engagement Analysis",
+    description: "During my Growth Marketing internship at Smartly, I volunteered to take on marketing analytics work to deepen my understanding of data-driven strategy.",
+    tags: ["analytics", "marketing"],
+    year: "2025",
+    tools: ["Tableau", "R"],
+    content: ` 
 
-## The Challenge
+    ## Introduction Text
+During my internship at Smartly as a Growth Marketing Intern, I volunteered to take on marketing analytics work to deepen my understanding of data-driven strategy. I analyzed internal campaign datasets to assess performance and audience engagement, providing timely reports and insights that supported the team’s optimization efforts. The data was processed in RStudio and visualized in Tableau, transforming campaign metrics into clear findings for strategies. The data is from 6Sense. To protect information security, the key axes have been masked.
 
-News editors needed to identify emerging stories faster. Traditional monitoring meant manually scanning dozens of sources — a process that was slow and prone to blind spots.
+![ABM](/iris/images/abm.jpg)
 
-## Approach
 
-Integrated sentiment analysis powered by a fine-tuned **BERT model** to surface emotional tone shifts in coverage. The pipeline ingests articles via RSS and API feeds, processes them through NLP layers, and renders interactive visualizations.
+## Basic steps in processing data
 
-## Key Results
+1. **Segment**: categorized campaigns based on their names:
+   - Audience Type: Hot / Warm / Unknown
+   - Focus Area: Flashtalking, GetDemo, etc.
 
-- Editors identified emerging stories **3 hours faster** on average
-- Covered 50+ outlets across 4 languages
-- Sentiment accuracy reached **91%** on validation set
+2. **Visualize**
+   - Focused on key performance metrics: Spend and CTR
+   - Segmented results into account-based vs. general
 
-## Reflection
-
-This project taught me how to bridge the gap between data science and editorial instinct. The best dashboards don't replace judgment — they sharpen it.`,
+3. **Insights**
+    `
   },
   {
     id: "2",
