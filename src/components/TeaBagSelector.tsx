@@ -100,7 +100,7 @@ const TeaBagSelector = () => {
 
       {/* Tea ceremony animation area */}
       {phase !== "idle" && (
-        <div className="relative flex flex-col items-center justify-center h-[280px] w-full max-w-xs animate-fade-in">
+        <div className="relative flex flex-col items-center justify-center h-[380px] w-full max-w-md animate-fade-in">
           {/* Falling tea bag */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2"
