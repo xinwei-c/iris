@@ -82,12 +82,18 @@ const ProjectDetailPage = () => {
             <span className="text-muted-foreground text-sm">Project Image</span>
           </div>
 
-          {/* Description */}
-          <div className="space-y-6">
-            <p className="text-muted-foreground leading-relaxed text-base">
-              {project.details || project.description}
-            </p>
-          </div>
+          {/* Markdown content */}
+          {project.content ? (
+            <article className="prose prose-neutral max-w-none prose-headings:font-serif-cn prose-headings:font-light prose-h1:text-3xl prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary">
+              <ReactMarkdown>{project.content}</ReactMarkdown>
+            </article>
+          ) : (
+            <div className="space-y-6">
+              <p className="text-muted-foreground leading-relaxed text-base">
+                {project.details || project.description}
+              </p>
+            </div>
+          )}
 
           {/* Tools */}
           {project.tools && project.tools.length > 0 && (
