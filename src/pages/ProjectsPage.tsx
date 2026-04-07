@@ -41,7 +41,7 @@ const ProjectsPage = () => {
             <>
               <p className="text-sm tracking-[0.3em] text-muted-foreground mb-5 flex items-center justify-center gap-2">
                 {categoryIcons[currentCategory.id]}
-                {currentCategory.teaType.toUpperCase()}
+                {currentCategory.teaTypeCn} · {currentCategory.teaType.toUpperCase()}
               </p>
               <h1 className="font-serif-cn text-5xl md:text-6xl font-light mb-8">
                 {currentCategory.label}
