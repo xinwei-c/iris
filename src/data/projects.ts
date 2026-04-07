@@ -27,7 +27,7 @@ export const categories: TeaBagCategory[] = [
   {
     id: "marketing",
     label: "Marketing",
-    hsl: "345 18% 72%",
+    hsl: "345, 18%, 72%",
     teaType: "Rose Tea",
     intro: "Brand strategy, campaign design, and creative storytelling that connects products to people through emotion and narrative.",
     teaStory: "Rose tea is crafted for delight — its petals unfold to release fragrance and color. Marketing, at its best, does the same: it transforms something ordinary into an experience worth savoring.",
