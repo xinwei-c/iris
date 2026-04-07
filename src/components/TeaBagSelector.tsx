@@ -124,7 +124,7 @@ const TeaBagSelector = () => {
               transformOrigin: "right bottom",
             }}
           >
-            <svg width="120" height="90" viewBox="0 0 180 140" fill="none">
+            <svg width="180" height="130" viewBox="0 0 180 140" fill="none">
               <ellipse cx="90" cy="95" rx="55" ry="40" stroke={color} strokeWidth="1.5" fill="none" />
               <ellipse cx="90" cy="58" rx="35" ry="8" stroke={color} strokeWidth="1.5" fill="none" />
               <line x1="90" y1="42" x2="90" y2="50" stroke={color} strokeWidth="1.5" />
