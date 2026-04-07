@@ -4,6 +4,10 @@ export interface Project {
   description: string;
   tags: string[];
   image?: string;
+  details?: string;
+  role?: string;
+  year?: string;
+  tools?: string[];
 }
 
 export interface TeaBagCategory {
