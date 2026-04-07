@@ -141,6 +141,52 @@ During my internship at Smartly as a Growth Marketing Intern, I volunteered to t
 
 export const projects: Project[] = [
   {
+    id: "11",
+    title: "Food Insecurity & Grocery Access in Wisconsin",
+    description: "Data-driven analysis of grocery store accessibility changes across Wisconsin counties from 2010 to 2015, revealing disparities in food access.",
+    tags: ["journalism", "analytics"],
+    role: "Data Journalist",
+    year: "2025",
+    tools: ["R", "Tableau"],
+    content: `![Main Visualization](${baseUrl}images/food1.png)
+
+## Introduction
+
+**Research Question:** To what extent do counties influence changes in grocery store accessibility from 2010 to 2015?
+
+Food accessibility varies across countries and disproportionately affects certain communities. Limited access to grocery stores can contribute to food insecurity and broader public health concerns, especially in lower-income or rural areas.
+
+Using data from the USDA Food Environment Atlas, this study explores changes in food access across Wisconsin counties between 2010 and 2015. We examine how factors like county population size, urban vs. rural classification, and racial demographics relate to low grocery access.
+
+For clarity and consistency in interpreting the data, the following definitions were used:
+- **Low access** refers to individuals living more than 1 mile from a grocery store in urban areas or more than 10 miles in rural areas.
+- All demographic variables were calculated as percentages within each group at the county level.
+
+This analysis focused specifically on counties within Wisconsin, using data from the USDA Food Environment Atlas.
+
+![Team Photo](${baseUrl}images/food2.jpeg)
+
+Together with my teammates Salma Gadelhak, Hanvin Moon and Chloe Siegel, we showed how grocery store access in Wisconsin counties changed between 2010 and 2015. Using R and Tableau, we visualized these disparities and uncovered patterns that often go unnoticed.
+`,
+  },
+  {
+    id: "12",
+    title: "Campbell's Soup Campaign",
+    description: "A marketing campaign for JOURN 445 showing consumers that Campbell's soup is affordable, easy to make, and genuinely delicious.",
+    tags: ["marketing", "analytics"],
+    role: "Campaign Strategist",
+    year: "2025",
+    tools: ["Marketing Strategy", "Campaign Design"],
+    content: `## Introduction
+
+This is part of my work in JOURN 445. Our campaign is focused on showing consumers that Campbell's soup is a reliable choice because it is affordable, easy to make, and genuinely delicious.
+
+We want to highlight the idea that a warm, satisfying meal does not have to cost a lot of money or take much time to prepare. By reinforcing that soup is a practical choice that fits into busy, everyday life, we want our consumers to feel confident that Campbell's is the right option when they need something quick, warm, and reliable.
+
+Overall, our message encourages people to think, *"Why overcomplicate meals when soup just makes sense?"*
+`,
+  },
+  {
     id: "1",
     title: "Campaign Efficacy and Engagement Analysis",
     description: "During my Growth Marketing internship at Smartly, I volunteered to take on marketing analytics work to deepen my understanding of data-driven strategy.",
