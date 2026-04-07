@@ -34,28 +34,21 @@ const ProjectsPage = () => {
       <Navigation />
 
       {/* Category title & intro */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+      <section className="pt-32 pb-8 px-6">
+        <div className="max-w-6xl mx-auto text-center animate-fade-in">
           {currentCategory && (
             <>
               <p className="text-sm tracking-[0.3em] text-muted-foreground mb-5 flex items-center justify-center gap-2">
                 {categoryIcons[currentCategory.id]}
                 {currentCategory.teaType.toUpperCase()}
               </p>
-              <h1 className="font-serif-cn text-5xl md:text-6xl font-light text-foreground mb-8">
+              <h1 className="font-serif-cn text-5xl md:text-6xl font-light mb-8">
                 {currentCategory.label}
               </h1>
-              <div className="w-12 h-[1px] bg-primary mx-auto mb-8" />
+              <div className="w-12 h-[1px] bg-primary mx-auto mb-6" />
               <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 {currentCategory.intro}
               </p>
-
-              {/* Tea culture quote */}
-              <div className="mt-10 px-10 py-8 border-l-2 border-primary/30 text-left max-w-2xl mx-auto">
-                <p className="text-base text-muted-foreground leading-[1.9] italic">
-                  "{currentCategory.teaStory}"
-                </p>
-              </div>
             </>
           )}
         </div>
