@@ -51,7 +51,7 @@ export const categories: TeaBagCategory[] = [
   {
     id: "photography",
     label: "Photography",
-    hsl: "25 16% 76%",
+    hsl: "25, 16%, 76%",
     teaType: "Chai Tea",
     intro: "Documentary, editorial, and fine art photography — capturing fleeting moments and the quiet beauty of everyday life.",
     teaStory: "Chai is a blend of spices, each contributing its own warmth. Photography, too, layers light, shadow, timing, and emotion into a single frame — a composition of many elements into one still moment.",
