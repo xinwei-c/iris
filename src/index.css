@@ -8,6 +8,8 @@
   :root {
     --background: 30 15% 94%;
     --foreground: 240 8% 30%;
+    --heading: 240 10% 22%;
+    --heading-secondary: 240 6% 38%;
 
     --card: 30 12% 91%;
     --card-foreground: 240 8% 30%;
@@ -66,7 +68,17 @@
     font-family: 'Inter', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
+    font-family: 'Noto Serif SC', serif;
+    color: hsl(var(--heading));
+  }
+
+  h2 {
+    font-family: 'Noto Serif SC', serif;
+    color: hsl(var(--heading-secondary));
+  }
+
+  h3, h4, h5, h6 {
     font-family: 'Noto Serif SC', serif;
   }
 }
