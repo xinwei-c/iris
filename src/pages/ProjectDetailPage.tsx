@@ -84,7 +84,7 @@ const ProjectDetailPage = () => {
 
           {/* Markdown content */}
           {project.content ? (
-            <article className="prose prose-neutral max-w-none prose-headings:font-serif-cn prose-headings:font-light prose-h1:text-3xl prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-p:text-muted-foreground prose-p:leading-relaxed prose-li:text-muted-foreground prose-strong:text-foreground prose-a:text-primary">
+            <article className="prose prose-neutral max-w-none prose-headings:font-serif-cn prose-headings:font-light prose-headings:text-[hsl(210,60%,72%)] prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-5 prose-p:text-foreground/70 prose-p:leading-[1.9] prose-p:text-base prose-li:text-foreground/70 prose-li:leading-[1.8] prose-strong:text-foreground prose-a:text-primary prose-ol:mt-4 prose-ul:mt-2 prose-ul:ml-4 prose-ol:ml-4">
               <ReactMarkdown>{project.content}</ReactMarkdown>
             </article>
           ) : (
