@@ -85,7 +85,7 @@ const PhotographyPage = () => {
         {filtered.map((series, si) => (
           <section
             key={series.id}
-            ref={(el) => { sectionRefs.current[series.id] = el; }}
+            ref={(el: HTMLDivElement | null) => { sectionRefs.current[series.id] = el; }}
             className="py-16 border-b border-border last:border-b-0 scroll-mt-32"
           >
             {/* Series header */}
