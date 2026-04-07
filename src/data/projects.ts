@@ -17,6 +17,7 @@ export interface TeaBagCategory {
   label: string;
   hsl: string;
   teaType: string;
+  teaTypeCn: string;
   intro: string;
   teaStory: string;
 }
