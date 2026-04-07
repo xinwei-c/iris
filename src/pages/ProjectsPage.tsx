@@ -81,8 +81,8 @@ const ProjectsPage = () => {
       </div>
 
       {/* Projects */}
-      <section className="px-6 py-12">
-        <div className="max-w-5xl mx-auto">
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto">
           {isPhotography ? (
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
               {filteredProjects.map((project, i) => (
