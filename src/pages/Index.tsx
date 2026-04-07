@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import TeaBagSelector from "@/components/TeaBagSelector";
 import { Instagram, Github, Linkedin, Mail } from "lucide-react";
+import Footer from "@/components/Footer";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
