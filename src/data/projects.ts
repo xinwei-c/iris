@@ -70,6 +70,7 @@ export interface Article {
   excerpt: string;
   date: string;
   tag: string;
+  content?: string;
 }
 
 export const articles: Article[] = [
@@ -79,6 +80,29 @@ export const articles: Article[] = [
     excerpt: "How visualization transforms raw numbers into compelling narratives that drive decisions and inspire action.",
     date: "2026-03-15",
     tag: "analytics",
+    content: `Data without narrative is noise. The best visualizations don't just display information — they guide the viewer through a story with a beginning, middle, and end.
+
+## Why Stories Matter in Data
+
+Humans are wired for narrative. When we see a chart, we instinctively look for a plot: *What changed? Why? What happens next?* The role of a data storyteller is to make those answers effortless to find.
+
+## The Three Layers
+
+1. **Foundation** — Clean, accurate data that earns trust
+2. **Structure** — A visual hierarchy that guides the eye
+3. **Emotion** — Color, annotation, and pacing that create meaning
+
+## A Practical Framework
+
+- Start with the insight, not the data
+- Remove everything that doesn't serve the story
+- Use annotation to bridge the gap between seeing and understanding
+
+> "The greatest value of a picture is when it forces us to notice what we never expected to see." — John Tukey
+
+## Reflection
+
+The best dashboards I've built weren't the most complex — they were the ones where someone looked at the screen and immediately said, *"Now I understand."*`,
   },
   {
     id: "2",
@@ -86,6 +110,27 @@ export const articles: Article[] = [
     excerpt: "Exploring how machine learning tools are reshaping newsrooms without replacing the human voice.",
     date: "2026-02-28",
     tag: "ai",
+    content: `The newsroom of 2026 looks nothing like 2020, but not in the way most people predicted. AI didn't replace journalists — it gave them superpowers.
+
+## What AI Actually Does in Newsrooms
+
+- **Transcription & translation** at near-real-time speed
+- **Pattern detection** across thousands of public records
+- **Draft generation** for routine reports (earnings, weather, sports scores)
+
+## The Human Edge
+
+What AI can't do is just as important: it can't cultivate a source over coffee, feel the weight of a community's grief, or decide which story *matters* when everything is technically newsworthy.
+
+## Finding the Balance
+
+The journalists I admire most treat AI like a research assistant — tireless, fast, and literal. They ask better questions because the machine handles the grunt work.
+
+> "Technology is a useful servant but a dangerous master." — Christian Lous Lange
+
+## What's Next
+
+The next frontier isn't AI writing stories. It's AI helping journalists find stories that would otherwise stay hidden in data no human could process alone.`,
   },
   {
     id: "3",
@@ -93,6 +138,25 @@ export const articles: Article[] = [
     excerpt: "Why consumers now demand transparency, and how marketing can adapt without losing its creative edge.",
     date: "2026-01-20",
     tag: "marketing",
+    content: `The era of polished perfection is over. Today's consumers don't want to be *marketed to* — they want to be *understood*.
+
+## The Authenticity Paradox
+
+Here's the uncomfortable truth: authenticity can't be manufactured. The moment a brand tries to "be authentic," it often becomes the opposite. So how do you navigate this?
+
+## Three Principles That Work
+
+1. **Show the process, not just the product** — Behind-the-scenes content outperforms polished ads 3:1 in engagement
+2. **Admit what you're not** — Brands that acknowledge limitations earn more trust than those claiming to do everything
+3. **Let customers tell the story** — User-generated content feels real because it *is* real
+
+## Case Study: Lumina
+
+When we launched the Lumina campaign, we deliberately included prototype failures in the brand video. The response was overwhelming — people connected with the struggle, not just the success.
+
+## The Creative Opportunity
+
+Authenticity doesn't mean boring. It means finding the genuine drama in your brand's story and telling it with craft and care.`,
   },
   {
     id: "4",
@@ -100,6 +164,23 @@ export const articles: Article[] = [
     excerpt: "A visual meditation on how natural light transforms urban spaces throughout the day.",
     date: "2025-12-10",
     tag: "photography",
+    content: `Every city has two lives: the one we see in daylight, and the one that emerges in the hours between.
+
+## The Golden Hour Myth
+
+Photographers obsess over golden hour, but the most interesting light happens at times no one talks about — the flat grey of an overcast noon, the neon-soaked blue of 9 PM, the amber pools beneath street lamps at midnight.
+
+## What I Learned
+
+- **Light reveals character.** The same building at dawn and dusk tells two completely different stories.
+- **Shadows are subjects too.** Sometimes the absence of light is more expressive than its presence.
+- **Weather is a collaborator.** Rain, fog, and haze don't ruin a shot — they transform it.
+
+## On Patience
+
+The best photographs I've taken came from waiting. Not for the perfect light, but for the moment when light and life aligned — a figure stepping into a beam, a curtain catching wind, a puddle reflecting sky.
+
+> "Photography is the story I fail to put into words." — Destin Sparks`,
   },
 ];
 
