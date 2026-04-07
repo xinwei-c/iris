@@ -11,10 +11,7 @@ export interface TeaBagCategory {
   id: string;
   label: string;
   labelCn: string;
-  hsl: string; // direct HSL color string
-  teaType: string;
-  teaTypeCn: string;
-}
+  hsl: string;
   teaType: string;
   teaTypeCn: string;
 }
@@ -24,7 +21,7 @@ export const categories: TeaBagCategory[] = [
     id: "news",
     label: "News",
     labelCn: "新闻",
-    color: "var(--morandi-green)",
+    hsl: "155, 14%, 58%",
     teaType: "Green Tea",
     teaTypeCn: "绿茶",
   },
@@ -32,7 +29,7 @@ export const categories: TeaBagCategory[] = [
     id: "marketing",
     label: "Marketing",
     labelCn: "市场",
-    color: "var(--morandi-pink)",
+    hsl: "350, 22%, 78%",
     teaType: "Rose Tea",
     teaTypeCn: "玫瑰花茶",
   },
@@ -40,7 +37,7 @@ export const categories: TeaBagCategory[] = [
     id: "data",
     label: "Data Analysis",
     labelCn: "数据分析",
-    color: "var(--morandi-blue)",
+    hsl: "210, 16%, 68%",
     teaType: "Blue Tea",
     teaTypeCn: "蝶豆花茶",
   },
@@ -48,7 +45,7 @@ export const categories: TeaBagCategory[] = [
     id: "ai",
     label: "AI",
     labelCn: "人工智能",
-    color: "var(--morandi-sage)",
+    hsl: "140, 10%, 65%",
     teaType: "Oolong Tea",
     teaTypeCn: "乌龙茶",
   },
@@ -56,7 +53,7 @@ export const categories: TeaBagCategory[] = [
     id: "design",
     label: "Design",
     labelCn: "设计",
-    color: "var(--morandi-warm)",
+    hsl: "25, 20%, 82%",
     teaType: "Chai Tea",
     teaTypeCn: "奶茶",
   },
