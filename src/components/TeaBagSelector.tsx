@@ -92,7 +92,7 @@ const TeaBagSelector = () => {
   return (
     <div className="flex flex-col items-center gap-12">
       {/* Tea bags */}
-      <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 md:gap-12 px-4 max-w-2xl">
+      <div className="flex flex-wrap justify-center gap-8 md:gap-12 lg:gap-16 px-4">
         {categories.map((cat, i) => (
           <TeaBag key={cat.id} category={cat} index={i} onSelect={handleSelect} isAnimating={phase !== "idle"} />
         ))}
@@ -100,7 +100,7 @@ const TeaBagSelector = () => {
 
       {/* Tea ceremony animation area */}
       {phase !== "idle" && (
-        <div className="relative flex flex-col items-center justify-center h-[280px] w-full max-w-xs animate-fade-in">
+        <div className="relative flex flex-col items-center justify-center h-[380px] w-full max-w-md animate-fade-in">
           {/* Falling tea bag */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2"
@@ -110,7 +110,7 @@ const TeaBagSelector = () => {
               transition: "opacity 0.3s",
             }}
           >
-            <svg width="40" height="70" viewBox="0 0 60 110" fill="none">
+            <svg width="60" height="100" viewBox="0 0 60 110" fill="none">
               <line x1="30" y1="0" x2="30" y2="30" stroke={color} strokeWidth="1.5" />
               <rect x="15" y="30" width="30" height="40" rx="3" stroke={color} strokeWidth="1.5" fill="none" />
             </svg>
@@ -124,7 +124,7 @@ const TeaBagSelector = () => {
               transformOrigin: "right bottom",
             }}
           >
-            <svg width="120" height="90" viewBox="0 0 180 140" fill="none">
+            <svg width="180" height="130" viewBox="0 0 180 140" fill="none">
               <ellipse cx="90" cy="95" rx="55" ry="40" stroke={color} strokeWidth="1.5" fill="none" />
               <ellipse cx="90" cy="58" rx="35" ry="8" stroke={color} strokeWidth="1.5" fill="none" />
               <line x1="90" y1="42" x2="90" y2="50" stroke={color} strokeWidth="1.5" />
