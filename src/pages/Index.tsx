@@ -1,6 +1,6 @@
 import Navigation from "@/components/Navigation";
 import TeaBagSelector from "@/components/TeaBagSelector";
-import { Instagram, Github } from "lucide-react";
+import { Instagram, Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
@@ -16,9 +16,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero with ink wash background */}
+      {/* Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Background image */}
         <div className="absolute inset-0">
           <img
             src={heroBg}
@@ -31,7 +30,6 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 text-center px-6">
           <p className="text-sm tracking-[0.3em] text-muted-foreground mb-4 animate-fade-in">
             PORTFOLIO
@@ -41,7 +39,6 @@ const Index = () => {
           </h1>
         </div>
 
-        {/* Scroll indicator */}
         <button
           onClick={handleScrollToTea}
           className="absolute bottom-12 flex flex-col items-center gap-2 opacity-50 z-10 hover:opacity-80 transition-opacity"
@@ -51,7 +48,7 @@ const Index = () => {
         </button>
       </section>
 
-      {/* Tea bag selection section */}
+      {/* Tea bag selection */}
       <section id="tea" className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-20 scroll-mt-8">
         <div className="text-center mb-16 animate-fade-in">
           <p className="text-sm text-muted-foreground tracking-[0.2em] mb-3">
@@ -68,28 +65,22 @@ const Index = () => {
         <TeaBagSelector />
       </section>
 
-      {/* Footer with social icons */}
+      {/* Footer */}
       <footer className="px-6 py-16 border-t border-border">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
           <span className="font-serif-cn text-lg tracking-widest text-foreground">Iris Chen</span>
           <div className="flex gap-5 items-center">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} />
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <Instagram size={18} />
             </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="GitHub">
+              <Github size={18} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
+              <Linkedin size={18} />
+            </a>
+            <a href="mailto:hello@irischen.com" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Email">
+              <Mail size={18} />
             </a>
           </div>
         </div>

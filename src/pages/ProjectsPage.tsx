@@ -17,17 +17,28 @@ const ProjectsPage = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Category title - landing point */}
-      <section className="pt-32 pb-8 px-6">
-        <div className="max-w-5xl mx-auto text-center animate-fade-in">
+      {/* Category title & intro */}
+      <section className="pt-32 pb-12 px-6">
+        <div className="max-w-3xl mx-auto text-center animate-fade-in">
           {currentCategory && (
             <>
-              <p className="text-sm tracking-widest text-muted-foreground mb-3">
-                {currentCategory.teaType}
+              <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4">
+                {currentCategory.teaType.toUpperCase()}
               </p>
-              <h1 className="font-serif-cn text-4xl md:text-5xl font-light text-foreground">
+              <h1 className="font-serif-cn text-4xl md:text-5xl font-light text-foreground mb-6">
                 {currentCategory.label}
               </h1>
+              <div className="w-12 h-[1px] bg-primary mx-auto mb-6" />
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
+                {currentCategory.intro}
+              </p>
+
+              {/* Tea culture quote */}
+              <div className="mt-8 px-8 py-6 border-l-2 border-primary/30 text-left max-w-lg mx-auto">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
+                  "{currentCategory.teaStory}"
+                </p>
+              </div>
             </>
           )}
         </div>
@@ -56,7 +67,6 @@ const ProjectsPage = () => {
       <section className="px-6 py-12">
         <div className="max-w-5xl mx-auto">
           {isPhotography ? (
-            /* Gallery / masonry layout for Photography */
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
               {filteredProjects.map((project, i) => (
                 <div
@@ -64,7 +74,6 @@ const ProjectsPage = () => {
                   className="break-inside-avoid group cursor-pointer overflow-hidden rounded-lg animate-fade-in"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
-                  {/* Placeholder image with varying heights for gallery feel */}
                   <div
                     className="bg-muted flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
                     style={{ height: `${200 + (i % 3) * 80}px` }}
@@ -81,7 +90,6 @@ const ProjectsPage = () => {
               ))}
             </div>
           ) : (
-            /* Standard card grid for other categories */
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredProjects.map((project, i) => (
                 <div
@@ -90,9 +98,7 @@ const ProjectsPage = () => {
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
                   <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
-                    <span className="text-muted-foreground text-sm">
-                      {project.title}
-                    </span>
+                    <span className="text-muted-foreground text-sm">{project.title}</span>
                   </div>
                   <h3 className="text-lg text-foreground group-hover:text-primary transition-colors">
                     {project.title}
@@ -120,9 +126,7 @@ const ProjectsPage = () => {
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">
-                No projects in this category yet.
-              </p>
+              <p className="text-muted-foreground text-lg">No projects in this category yet.</p>
             </div>
           )}
         </div>

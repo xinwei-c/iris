@@ -6,51 +6,53 @@
 
 @layer base {
   :root {
-    --background: 40 25% 95%;
-    --foreground: 220 12% 22%;
+    --background: 30 20% 95%;
+    --foreground: 220 10% 25%;
 
-    --card: 40 20% 92%;
-    --card-foreground: 220 12% 22%;
+    --card: 30 16% 92%;
+    --card-foreground: 220 10% 25%;
 
-    --popover: 40 25% 95%;
-    --popover-foreground: 220 12% 22%;
+    --popover: 30 20% 95%;
+    --popover-foreground: 220 10% 25%;
 
-    --primary: 155 14% 58%;
-    --primary-foreground: 40 25% 95%;
+    --primary: 345 18% 72%;
+    --primary-foreground: 30 20% 95%;
 
-    --secondary: 210 16% 68%;
-    --secondary-foreground: 220 12% 22%;
+    --secondary: 210 14% 65%;
+    --secondary-foreground: 220 10% 25%;
 
-    --muted: 40 15% 90%;
-    --muted-foreground: 220 8% 50%;
+    --muted: 30 12% 90%;
+    --muted-foreground: 220 6% 52%;
 
-    --accent: 350 22% 78%;
-    --accent-foreground: 220 12% 22%;
+    --accent: 150 10% 62%;
+    --accent-foreground: 220 10% 25%;
 
-    --destructive: 0 60% 50%;
-    --destructive-foreground: 40 25% 95%;
+    --destructive: 0 50% 55%;
+    --destructive-foreground: 30 20% 95%;
 
-    --border: 40 15% 85%;
-    --input: 40 15% 85%;
-    --ring: 155 14% 58%;
+    --border: 30 12% 86%;
+    --input: 30 12% 86%;
+    --ring: 345 18% 72%;
 
     --radius: 0.5rem;
 
-    --morandi-green: 155 14% 58%;
-    --morandi-blue: 210 16% 68%;
-    --morandi-pink: 350 22% 78%;
-    --morandi-beige: 35 30% 88%;
-    --morandi-warm: 25 20% 82%;
-    --morandi-sage: 140 10% 65%;
+    --morandi-green: 155 12% 58%;
+    --morandi-blue: 210 14% 65%;
+    --morandi-pink: 345 18% 72%;
+    --morandi-beige: 30 18% 88%;
+    --morandi-warm: 25 16% 76%;
+    --morandi-sage: 150 10% 62%;
+    --morandi-mauve: 320 12% 70%;
+    --morandi-clay: 15 14% 72%;
 
-    --sidebar-background: 40 20% 92%;
-    --sidebar-foreground: 220 12% 22%;
-    --sidebar-primary: 155 14% 58%;
-    --sidebar-primary-foreground: 40 25% 95%;
-    --sidebar-accent: 40 15% 90%;
-    --sidebar-accent-foreground: 220 12% 22%;
-    --sidebar-border: 40 15% 85%;
-    --sidebar-ring: 155 14% 58%;
+    --sidebar-background: 30 16% 92%;
+    --sidebar-foreground: 220 10% 25%;
+    --sidebar-primary: 345 18% 72%;
+    --sidebar-primary-foreground: 30 20% 95%;
+    --sidebar-accent: 30 12% 90%;
+    --sidebar-accent-foreground: 220 10% 25%;
+    --sidebar-border: 30 12% 86%;
+    --sidebar-ring: 345 18% 72%;
   }
 }
 
@@ -82,6 +84,9 @@
   }
   .text-morandi-pink {
     color: hsl(var(--morandi-pink));
+  }
+  .text-morandi-mauve {
+    color: hsl(var(--morandi-mauve));
   }
   .bg-morandi-green {
     background-color: hsl(var(--morandi-green));
