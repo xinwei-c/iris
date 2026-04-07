@@ -11,7 +11,10 @@ export interface TeaBagCategory {
   id: string;
   label: string;
   labelCn: string;
-  color: string; // HSL CSS variable name
+  hsl: string; // direct HSL color string
+  teaType: string;
+  teaTypeCn: string;
+}
   teaType: string;
   teaTypeCn: string;
 }
