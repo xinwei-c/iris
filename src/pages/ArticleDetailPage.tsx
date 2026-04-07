@@ -27,6 +27,12 @@ const ArticleDetailPage = () => {
   }
 
   const cat = categories.find((c) => c.id === article.tag);
+  const normalizedContent = article.content?.replace(/^\s+/, "");
+  const firstImageMatch = normalizedContent?.match(/!\[.*?\]\((.*?)\)/);
+  const heroImage = firstImageMatch ? firstImageMatch[1] : null;
+  const contentWithoutHero = normalizedContent
+    ? normalizedContent.replace(/!\[.*?\]\(.*?\)\n?/, "")
+    : normalizedContent;
 
   return (
     <div className="min-h-screen bg-background">
