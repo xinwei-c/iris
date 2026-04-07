@@ -54,7 +54,7 @@ const ArticlesPage = () => {
           })}
         </div>
       </section>
-    </div>
+      <Footer />
   );
 };
 
