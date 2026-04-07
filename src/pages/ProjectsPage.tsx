@@ -102,7 +102,8 @@ const ProjectsPage = () => {
               {filteredProjects.map((project, i) => (
                 <div
                   key={project.id}
-                  className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in"
+                  onClick={() => navigate(`/project/${project.id}`)}
+                  className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
                   <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
