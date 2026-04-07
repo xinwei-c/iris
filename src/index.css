@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 30 20% 95%;
-    --foreground: 220 10% 25%;
+    --background: 30 15% 94%;
+    --foreground: 240 8% 30%;
 
-    --card: 30 16% 92%;
-    --card-foreground: 220 10% 25%;
+    --card: 30 12% 91%;
+    --card-foreground: 240 8% 30%;
 
-    --popover: 30 20% 95%;
-    --popover-foreground: 220 10% 25%;
+    --popover: 30 15% 94%;
+    --popover-foreground: 240 8% 30%;
 
-    --primary: 345 18% 72%;
-    --primary-foreground: 30 20% 95%;
+    --primary: 340 12% 68%;
+    --primary-foreground: 30 15% 94%;
 
-    --secondary: 210 14% 65%;
-    --secondary-foreground: 220 10% 25%;
+    --secondary: 215 10% 62%;
+    --secondary-foreground: 240 8% 30%;
 
-    --muted: 30 12% 90%;
-    --muted-foreground: 220 6% 52%;
+    --muted: 30 8% 89%;
+    --muted-foreground: 240 5% 50%;
 
-    --accent: 150 10% 62%;
-    --accent-foreground: 220 10% 25%;
+    --accent: 155 8% 60%;
+    --accent-foreground: 240 8% 30%;
 
-    --destructive: 0 50% 55%;
-    --destructive-foreground: 30 20% 95%;
+    --destructive: 0 40% 55%;
+    --destructive-foreground: 30 15% 94%;
 
-    --border: 30 12% 86%;
-    --input: 30 12% 86%;
-    --ring: 345 18% 72%;
+    --border: 30 8% 85%;
+    --input: 30 8% 85%;
+    --ring: 340 12% 68%;
 
     --radius: 0.5rem;
 
-    --morandi-green: 155 12% 58%;
-    --morandi-blue: 210 14% 65%;
-    --morandi-pink: 345 18% 72%;
-    --morandi-beige: 30 18% 88%;
-    --morandi-warm: 25 16% 76%;
-    --morandi-sage: 150 10% 62%;
-    --morandi-mauve: 320 12% 70%;
-    --morandi-clay: 15 14% 72%;
+    --morandi-green: 155 10% 56%;
+    --morandi-blue: 215 10% 62%;
+    --morandi-pink: 340 12% 68%;
+    --morandi-beige: 30 12% 87%;
+    --morandi-warm: 25 12% 74%;
+    --morandi-sage: 155 8% 60%;
+    --morandi-mauve: 320 8% 66%;
+    --morandi-clay: 15 10% 70%;
 
     --sidebar-background: 30 16% 92%;
     --sidebar-foreground: 220 10% 25%;
