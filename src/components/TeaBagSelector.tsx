@@ -49,8 +49,8 @@ const TeaBag = ({ category, index, onSelect, isAnimating }: TeaBagProps) => {
       style={{ animation: `float 3s ease-in-out ${delay}s infinite` }}
     >
       <svg
-        width="60"
-        height="110"
+        width="80"
+        height="140"
         viewBox="0 0 60 110"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
