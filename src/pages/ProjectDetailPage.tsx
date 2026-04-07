@@ -105,15 +105,6 @@ const ProjectDetailPage = () => {
             </div>
           )}
 
-          {/* More images placeholder */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="aspect-[4/3] rounded-lg bg-muted flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Image 2</span>
-            </div>
-            <div className="aspect-[4/3] rounded-lg bg-muted flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Image 3</span>
-            </div>
-          </div>
         </div>
       </section>
 
