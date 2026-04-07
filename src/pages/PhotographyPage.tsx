@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { photoSeries } from "@/data/photoSeries";
 import { categories } from "@/data/projects";
@@ -10,6 +10,10 @@ const PhotographyPage = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const filtered = photoSeries.filter(
     (s) =>
