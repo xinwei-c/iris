@@ -43,7 +43,7 @@ export const categories: TeaBagCategory[] = [
   {
     id: "ai",
     label: "AI",
-    hsl: "150 10% 62%",
+    hsl: "150, 10%, 62%",
     teaType: "Oolong Tea",
     intro: "Machine learning, natural language processing, and AI-powered tools that augment human creativity and decision-making.",
     teaStory: "Oolong sits between green and black tea — a balance of tradition and transformation. AI lives in a similar space: neither fully human nor purely mechanical, it finds meaning in the gradient between.",
