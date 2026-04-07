@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import TeaBagSelector from "@/components/TeaBagSelector";
+import { Instagram, Github } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
@@ -24,19 +25,9 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center px-6">
-          <p className="text-sm tracking-[0.3em] text-muted-foreground mb-4 animate-fade-in">
-            PORTFOLIO
-          </p>
-          <h1 className="font-serif-cn text-6xl md:text-8xl lg:text-9xl font-light tracking-[0.1em] text-foreground">
+          <h1 className="font-serif-cn text-6xl md:text-8xl lg:text-9xl font-light tracking-[0.1em] text-foreground animate-fade-in">
             Iris Chen
           </h1>
-          <div className="mt-6 flex gap-3 items-center justify-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <div className="w-12 h-[1px] bg-primary" />
-            <p className="text-lg text-muted-foreground tracking-[0.2em]">
-              Journalism · Marketing · AI · Photography
-            </p>
-            <div className="w-12 h-[1px] bg-accent" />
-          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -63,14 +54,29 @@ const Index = () => {
         <TeaBagSelector />
       </section>
 
-      {/* Footer */}
+      {/* Footer with social icons */}
       <footer className="px-6 py-16 border-t border-border">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
           <span className="font-serif-cn text-lg tracking-widest text-foreground">Iris Chen</span>
-          <div className="flex gap-6">
-            <a href="mailto:hello@irischen.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Email</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+          <div className="flex gap-5 items-center">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
           </div>
         </div>
       </footer>

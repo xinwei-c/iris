@@ -6,7 +6,6 @@ const Navigation = () => {
   const links = [
     { to: "/#tea", label: "Work" },
     { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
   ];
 
   return (

@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { categories, projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 
@@ -15,9 +15,25 @@ const ProjectsPage = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
+      {/* Category title - landing point */}
+      <section className="pt-32 pb-8 px-6">
+        <div className="max-w-5xl mx-auto text-center animate-fade-in">
+          {currentCategory && (
+            <>
+              <p className="text-sm tracking-widest text-muted-foreground mb-3">
+                {currentCategory.teaType}
+              </p>
+              <h1 className="font-serif-cn text-4xl md:text-5xl font-light text-foreground">
+                {currentCategory.label}
+              </h1>
+            </>
+          )}
+        </div>
+      </section>
+
       {/* Category tabs */}
-      <div className="pt-20 px-6 border-b border-border">
-        <div className="max-w-5xl mx-auto flex gap-6 overflow-x-auto py-4">
+      <div className="px-6 border-b border-border">
+        <div className="max-w-5xl mx-auto flex gap-6 overflow-x-auto py-4 justify-center">
           {categories.map((cat) => (
             <button
               key={cat.id}
@@ -34,26 +50,15 @@ const ProjectsPage = () => {
         </div>
       </div>
 
-      {/* Category title */}
-      <section className="px-6 py-16">
-        <div className="max-w-5xl mx-auto animate-fade-in">
-          {currentCategory && (
-            <div className="mb-16 text-center">
-              <p className="text-sm tracking-widest text-muted-foreground mb-3">
-                {currentCategory.teaType}
-              </p>
-              <h1 className="font-serif-cn text-4xl md:text-5xl font-light text-foreground">
-                {currentCategory.label}
-              </h1>
-            </div>
-          )}
-
-          {/* Projects grid */}
+      {/* Projects grid */}
+      <section className="px-6 py-12">
+        <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, i) => (
               <div
                 key={project.id}
-                className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card"
+                className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in"
+                style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
                   <span className="text-muted-foreground text-sm">
