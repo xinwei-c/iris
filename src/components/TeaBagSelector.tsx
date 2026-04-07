@@ -62,7 +62,8 @@ const TeaBag = ({ category, index, onSelect, isAnimating }: TeaBagProps) => {
         <path d={paths.accent} stroke={`hsl(${category.hsl})`} strokeWidth="0.8" opacity="0.4" fill="none" />
       </svg>
       <div className="mt-3 text-center transition-opacity duration-300 opacity-70 group-hover:opacity-100">
-        <p className="text-[10px] text-muted-foreground tracking-wider mt-0.5">{category.teaType}</p>
+        <p className="text-[10px] text-muted-foreground tracking-wider mt-0.5">{category.teaTypeCn}</p>
+        <p className="text-[9px] text-muted-foreground/70 tracking-wide">{category.teaType}</p>
         <p className="text-xs text-foreground font-medium mt-0.5">{category.label}</p>
       </div>
     </div>
