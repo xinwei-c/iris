@@ -35,7 +35,7 @@ export const categories: TeaBagCategory[] = [
   {
     id: "analytics",
     label: "Analytics",
-    hsl: "210 14% 65%",
+    hsl: "210, 14%, 65%",
     teaType: "Blue Tea",
     intro: "Data-driven insights, visualization, and predictive modeling that turn numbers into narratives and patterns into possibilities.",
     teaStory: "Butterfly pea flower tea changes color with a drop of citrus — revealing hidden dimensions. Data analytics works the same way: a shift in perspective can transform raw information into vivid insight.",
