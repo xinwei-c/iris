@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage.tsx";
 import ArticlesPage from "./pages/ArticlesPage.tsx";
 import ProjectDetailPage from "./pages/ProjectDetailPage.tsx";
 import ArticleDetailPage from "./pages/ArticleDetailPage.tsx";
+import PhotographyPage from "./pages/PhotographyPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/projects/photography" element={<PhotographyPage />} />
           <Route path="/projects/:tag" element={<ProjectsPage />} />
           <Route path="/project/:id" element={<ProjectDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
