@@ -12,6 +12,8 @@ export interface Project {
   tools?: string[];
 }
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export interface TeaBagCategory {
   id: string;
   label: string;
@@ -99,7 +101,7 @@ export const articles: Article[] = [
 
 During my internship at Smartly as a Growth Marketing Intern, I volunteered to take on marketing analytics work to deepen my understanding of data-driven strategy. I analyzed internal campaign datasets to assess performance and audience engagement, providing timely reports and insights that supported the team’s optimization efforts. The data was processed in RStudio and visualized in Tableau, transforming campaign metrics into clear findings for strategies. The data is from 6Sense. To protect information security, the key axes have been masked.
 
-![ABM](/images/abm.png)
+![ABM](${baseUrl}images/abm.png)
 
 ## Basic steps in processing data
 
