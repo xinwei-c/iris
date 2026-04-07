@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { articles, categories } from "@/data/projects";
 
 const ArticlesPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
