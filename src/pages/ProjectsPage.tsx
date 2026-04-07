@@ -78,6 +78,7 @@ const ProjectsPage = () => {
               {filteredProjects.map((project, i) => (
                 <div
                   key={project.id}
+                  onClick={() => navigate(`/project/${project.id}`)}
                   className="break-inside-avoid group cursor-pointer overflow-hidden rounded-lg animate-fade-in"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
