@@ -3,6 +3,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { categories, projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Newspaper, Megaphone, BarChart3, Brain, Camera } from "lucide-react";
+
+const categoryIcons: Record<string, React.ReactNode> = {
+  journalism: <Newspaper size={18} />,
+  marketing: <Megaphone size={18} />,
+  analytics: <BarChart3 size={18} />,
+  ai: <Brain size={18} />,
+  photography: <Camera size={18} />,
+};
 
 const ProjectsPage = () => {
   const { tag } = useParams<{ tag: string }>();
@@ -29,7 +38,8 @@ const ProjectsPage = () => {
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           {currentCategory && (
             <>
-              <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4">
+              <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4 flex items-center justify-center gap-2">
+                {categoryIcons[currentCategory.id]}
                 {currentCategory.teaType.toUpperCase()}
               </p>
               <h1 className="font-serif-cn text-4xl md:text-5xl font-light text-foreground mb-6">
