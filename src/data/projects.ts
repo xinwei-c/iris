@@ -112,7 +112,25 @@ export const projects: Project[] = [
     role: "Lead Analyst & Developer",
     year: "2026",
     tools: ["Python", "D3.js", "NLP"],
-    details: "Built a comprehensive dashboard that tracks breaking news across 50+ outlets in real time. Integrated sentiment analysis powered by a fine-tuned BERT model to surface emotional tone shifts in coverage. The tool helped editors identify emerging stories 3 hours faster on average.",
+    content: `Built a comprehensive dashboard that tracks breaking news across 50+ outlets in real time.
+
+## The Challenge
+
+News editors needed to identify emerging stories faster. Traditional monitoring meant manually scanning dozens of sources — a process that was slow and prone to blind spots.
+
+## Approach
+
+Integrated sentiment analysis powered by a fine-tuned **BERT model** to surface emotional tone shifts in coverage. The pipeline ingests articles via RSS and API feeds, processes them through NLP layers, and renders interactive visualizations.
+
+## Key Results
+
+- Editors identified emerging stories **3 hours faster** on average
+- Covered 50+ outlets across 4 languages
+- Sentiment accuracy reached **91%** on validation set
+
+## Reflection
+
+This project taught me how to bridge the gap between data science and editorial instinct. The best dashboards don't replace judgment — they sharpen it.`,
   },
   {
     id: "2",
