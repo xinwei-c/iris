@@ -55,6 +55,7 @@ const ArticlesPage = () => {
         </div>
       </section>
       <Footer />
+    </div>
   );
 };
 

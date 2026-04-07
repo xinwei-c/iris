@@ -139,6 +139,7 @@ const ProjectsPage = () => {
         </div>
       </section>
       <Footer />
+    </div>
   );
 };
 
