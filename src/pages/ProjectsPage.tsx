@@ -4,6 +4,7 @@ import { categories, projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Camera, Newspaper, Megaphone, BarChart3, Brain, Palette } from "lucide-react";
+import { extractFirstMarkdownImage } from "@/lib/content-images";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   journalism: <Newspaper size={18} />,
@@ -86,12 +87,27 @@ const ProjectsPage = () => {
                   className="break-inside-avoid group cursor-pointer overflow-hidden rounded-lg animate-fade-in"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
-                  <div
-                    className="bg-muted flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
-                    style={{ height: `${200 + (i % 3) * 80}px` }}
-                  >
-                    <span className="text-muted-foreground text-sm">{project.title}</span>
-                  </div>
+                  {(() => {
+                    const previewImage = extractFirstMarkdownImage(project.content) || project.image;
+
+                    return (
+                      <div
+                        className="bg-muted flex items-center justify-center overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]"
+                        style={{ height: `${200 + (i % 3) * 80}px` }}
+                      >
+                        {previewImage ? (
+                          <img
+                            src={previewImage}
+                            alt={project.title}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <span className="text-muted-foreground text-sm">{project.title}</span>
+                        )}
+                      </div>
+                    );
+                  })()}
                   <div className="py-3">
                     <h3 className="text-sm text-foreground group-hover:text-primary transition-colors">
                       {project.title}
@@ -110,9 +126,24 @@ const ProjectsPage = () => {
                   className="group border border-border rounded-lg p-6 hover:border-primary/30 transition-all duration-300 bg-card animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${i * 0.1}s` }}
                 >
-                  <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
-                    <span className="text-muted-foreground text-sm">{project.title}</span>
-                  </div>
+                  {(() => {
+                    const previewImage = extractFirstMarkdownImage(project.content) || project.image;
+
+                    return (
+                      <div className="aspect-[16/10] rounded-md bg-muted mb-5 flex items-center justify-center overflow-hidden">
+                        {previewImage ? (
+                          <img
+                            src={previewImage}
+                            alt={project.title}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <span className="text-muted-foreground text-sm">{project.title}</span>
+                        )}
+                      </div>
+                    );
+                  })()}
                   <h3 className="text-lg text-foreground group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>

@@ -5,6 +5,7 @@ import { projects, categories } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
+import { extractFirstMarkdownImage, stripFirstMarkdownImage } from "@/lib/content-images";
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -28,13 +29,9 @@ const ProjectDetailPage = () => {
 
   const primaryTag = project.tags[0];
   const cat = categories.find((c) => c.id === primaryTag);
-  const normalizedContent = project.content?.trimStart();
-  const firstImageMatch = normalizedContent?.match(/^\s*!\[[^\]]*\]\(([^)]+)\)/m);
-  const markdownHeroImage = firstImageMatch ? firstImageMatch[1] : null;
+  const markdownHeroImage = extractFirstMarkdownImage(project.content);
   const heroImage = markdownHeroImage || project.image;
-  const contentWithoutHero = normalizedContent
-    ? normalizedContent.replace(/^\s*!\[[^\]]*\]\([^)]+\)\s*\n*/m, '')
-    : normalizedContent;
+  const contentWithoutHero = stripFirstMarkdownImage(project.content);
 
   return (
     <div className="min-h-screen bg-background">
