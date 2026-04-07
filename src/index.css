@@ -6,55 +6,55 @@
 
 @layer base {
   :root {
-    --background: 30 15% 94%;
+    --background: 38 25% 95%;
     --foreground: 240 8% 30%;
-    --heading: 240 10% 22%;
-    --heading-secondary: 240 6% 38%;
+    --heading: 340 14% 62%;
+    --heading-secondary: 210 30% 70%;
 
-    --card: 30 12% 91%;
+    --card: 36 20% 92%;
     --card-foreground: 240 8% 30%;
 
-    --popover: 30 15% 94%;
+    --popover: 38 25% 95%;
     --popover-foreground: 240 8% 30%;
 
-    --primary: 340 12% 68%;
-    --primary-foreground: 30 15% 94%;
+    --primary: 340 14% 62%;
+    --primary-foreground: 38 25% 95%;
 
-    --secondary: 215 10% 62%;
+    --secondary: 210 18% 68%;
     --secondary-foreground: 240 8% 30%;
 
-    --muted: 30 8% 89%;
+    --muted: 35 15% 90%;
     --muted-foreground: 240 5% 50%;
 
     --accent: 155 8% 60%;
     --accent-foreground: 240 8% 30%;
 
     --destructive: 0 40% 55%;
-    --destructive-foreground: 30 15% 94%;
+    --destructive-foreground: 38 25% 95%;
 
-    --border: 30 8% 85%;
-    --input: 30 8% 85%;
-    --ring: 340 12% 68%;
+    --border: 35 12% 86%;
+    --input: 35 12% 86%;
+    --ring: 340 14% 62%;
 
     --radius: 0.5rem;
 
     --morandi-green: 155 10% 56%;
-    --morandi-blue: 215 10% 62%;
-    --morandi-pink: 340 12% 68%;
-    --morandi-beige: 30 12% 87%;
+    --morandi-blue: 210 30% 70%;
+    --morandi-pink: 340 14% 62%;
+    --morandi-beige: 36 20% 88%;
     --morandi-warm: 25 12% 74%;
     --morandi-sage: 155 8% 60%;
     --morandi-mauve: 320 8% 66%;
     --morandi-clay: 15 10% 70%;
 
-    --sidebar-background: 30 16% 92%;
+    --sidebar-background: 36 22% 93%;
     --sidebar-foreground: 220 10% 25%;
-    --sidebar-primary: 345 18% 72%;
-    --sidebar-primary-foreground: 30 20% 95%;
-    --sidebar-accent: 30 12% 90%;
+    --sidebar-primary: 340 14% 62%;
+    --sidebar-primary-foreground: 38 25% 95%;
+    --sidebar-accent: 36 18% 91%;
     --sidebar-accent-foreground: 220 10% 25%;
-    --sidebar-border: 30 12% 86%;
-    --sidebar-ring: 345 18% 72%;
+    --sidebar-border: 35 12% 86%;
+    --sidebar-ring: 340 14% 62%;
   }
 }
 
@@ -78,8 +78,14 @@
     color: hsl(var(--heading-secondary));
   }
 
-  h3, h4, h5, h6 {
+  h3 {
     font-family: 'Noto Serif SC', serif;
+    color: hsl(var(--morandi-sage));
+  }
+
+  h4, h5, h6 {
+    font-family: 'Noto Serif SC', serif;
+    color: hsl(var(--foreground));
   }
 }
 
