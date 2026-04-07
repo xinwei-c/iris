@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { articles, categories } from "@/data/projects";
 
 const ArticlesPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -28,7 +30,8 @@ const ArticlesPage = () => {
             return (
               <article
                 key={article.id}
-                className="group border-b border-border py-8 first:pt-0 cursor-pointer animate-fade-in"
+                onClick={() => navigate(`/article/${article.id}`)}
+                className="group border-b border-border py-8 first:pt-0 cursor-pointer animate-fade-in hover:bg-muted/30 transition-colors -mx-4 px-4 rounded-lg"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="flex items-center gap-3 mb-3">
