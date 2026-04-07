@@ -29,9 +29,12 @@ const ProjectDetailPage = () => {
   const primaryTag = project.tags[0];
   const cat = categories.find((c) => c.id === primaryTag);
 
-  // Extract first image from markdown content
+  // Extract first image from markdown content and remove it from body
   const firstImageMatch = project.content?.match(/!\[.*?\]\((.*?)\)/);
   const heroImage = project.image || (firstImageMatch ? firstImageMatch[1] : null);
+  const contentWithoutHero = heroImage && !project.image && project.content
+    ? project.content.replace(/!\[.*?\]\(.*?\)\n?/, '')
+    : project.content;
 
   return (
     <div className="min-h-screen bg-background">
@@ -95,7 +98,7 @@ const ProjectDetailPage = () => {
           {/* Markdown content */}
           {project.content ? (
             <article className="prose prose-neutral max-w-none prose-headings:font-serif-cn prose-headings:font-light prose-headings:text-[hsl(210,60%,72%)] prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-5 prose-p:text-foreground/70 prose-p:leading-[1.9] prose-p:text-base prose-li:text-foreground/70 prose-li:leading-[1.8] prose-strong:text-foreground prose-a:text-primary prose-ol:mt-4 prose-ul:mt-2 prose-ul:ml-4 prose-ol:ml-4">
-              <ReactMarkdown>{project.content}</ReactMarkdown>
+              <ReactMarkdown>{contentWithoutHero || ''}</ReactMarkdown>
             </article>
           ) : (
             <div className="space-y-6">
