@@ -19,6 +19,8 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        heading: "hsl(var(--heading))",
+        "heading-secondary": "hsl(var(--heading-secondary))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -46,6 +48,16 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        morandi: {
+          green: "hsl(var(--morandi-green))",
+          blue: "hsl(var(--morandi-blue))",
+          pink: "hsl(var(--morandi-pink))",
+          beige: "hsl(var(--morandi-beige))",
+          warm: "hsl(var(--morandi-warm))",
+          sage: "hsl(var(--morandi-sage))",
+          mauve: "hsl(var(--morandi-mauve))",
+          clay: "hsl(var(--morandi-clay))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
