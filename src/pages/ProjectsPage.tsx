@@ -38,7 +38,8 @@ const ProjectsPage = () => {
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           {currentCategory && (
             <>
-              <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4">
+              <p className="text-xs tracking-[0.3em] text-muted-foreground mb-4 flex items-center justify-center gap-2">
+                {categoryIcons[currentCategory.id]}
                 {currentCategory.teaType.toUpperCase()}
               </p>
               <h1 className="font-serif-cn text-4xl md:text-5xl font-light text-foreground mb-6">

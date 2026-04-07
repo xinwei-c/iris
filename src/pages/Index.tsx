@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import TeaBagSelector from "@/components/TeaBagSelector";
 import { Instagram, Github, Linkedin, Mail } from "lucide-react";
 import Footer from "@/components/Footer";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-ink-wash.jpg";
 
 const Index = () => {
   const handleScrollToTea = (e: React.MouseEvent) => {
