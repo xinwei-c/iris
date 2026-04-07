@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { categories, projects } from "@/data/projects";
 import Navigation from "@/components/Navigation";
@@ -5,6 +6,11 @@ import Navigation from "@/components/Navigation";
 const ProjectsPage = () => {
   const { tag } = useParams<{ tag: string }>();
   const navigate = useNavigate();
+  const titleRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [tag]);
 
   const currentCategory = categories.find((c) => c.id === tag);
   const filteredProjects = tag
