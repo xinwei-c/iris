@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { photoSeries } from "@/data/photoSeries";
+import { categories } from "@/data/projects";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Search, Camera } from "lucide-react";
