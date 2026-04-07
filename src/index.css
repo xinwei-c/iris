@@ -24,7 +24,7 @@
     --secondary-foreground: 240 8% 30%;
 
     --muted: 35 15% 90%;
-    --muted-foreground: 240 5% 50%;
+    --muted-foreground: 240 7% 38%;
 
     --accent: 155 8% 60%;
     --accent-foreground: 240 8% 30%;
@@ -66,6 +66,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    font-size: 15.5px;
   }
 
   h1 {

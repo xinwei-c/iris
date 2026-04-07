@@ -47,9 +47,8 @@ const PhotographyPage = () => {
             Photography
           </h1>
           <div className="w-12 h-[1px] bg-primary mx-auto mb-6" />
-          <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Documentary, editorial, and fine art photography — capturing fleeting
-            moments and the quiet beauty of everyday life.
+          <p className="text-base leading-relaxed max-w-2xl mx-auto text-[hsl(210,28%,52%)]">
+            Moments that catch live beauty
           </p>
         </div>
       </section>

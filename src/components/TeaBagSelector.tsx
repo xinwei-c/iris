@@ -84,7 +84,7 @@ const TeaBagSelector = () => {
     setTimeout(() => setPhase("pouring"), 2200);
     setTimeout(() => {
       setPhase("done");
-      setTimeout(() => navigate(`/projects/${category.id}`), 1800);
+      setTimeout(() => navigate(`/projects/${category.id}`), 2500);
     }, 3800);
   };
 

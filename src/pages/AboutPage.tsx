@@ -25,6 +25,18 @@ const earlierNews: NewsItem[] = [
     date: "December 2024",
     text: "Completed my individual journalistic work exploring the evolution of liberal arts education at UW-Madison.",
   },
+  {
+    date: "December 2024",
+    text: "Finished my consulting project with American Family Insurance in Ethical and Responsible Business Network",
+  },
+  {
+    date: "December 2024",
+    text: "Conducted over 20 phone interviews regarding Wisconsin Family Health Study in University of Wisconsin Survey Centre.",
+  },
+  {
+    date: "Semtember 2024",
+    text: "Joined School of Journalism and Mass Communication with Honor.",
+  },
 ];
 
 const NewsCard = ({ item }: { item: NewsItem }) => (
@@ -69,22 +81,13 @@ const AboutPage = () => {
           </h1>
           <div className="w-16 h-[1px] bg-primary mb-8" />
 
-          <div className="space-y-6 text-muted-foreground leading-relaxed">
+          <article className="prose prose-neutral max-w-none prose-headings:font-serif-cn prose-headings:font-light prose-headings:text-[hsl(210,60%,72%)] prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-5 prose-p:text-foreground/70 prose-p:leading-[1.9] prose-p:text-base prose-li:text-foreground/70 prose-li:leading-[1.8] prose-strong:text-foreground prose-a:text-primary prose-ol:mt-4 prose-ul:mt-2 prose-ul:ml-4 prose-ol:ml-4">
+            <p>Hi, welcome to my site! My name is Iris (Xinwei) Chen.</p>
+            <p>Data Storyteller</p>
             <p>
-              I'm a multidisciplinary creative working at the intersection of journalism,
-              marketing, data analytics, AI, and photography. My work is driven by curiosity
-              and a passion for storytelling across different mediums.
+              I’m a senior student at the University of Wisconsin–Madison studying Journalism and Data Science. I am also a part-time volunteer with the Computational Approaches and Message Effects Research (CAMER) group in the School of Journalism and Mass Communication. Besides, I study to grow into a marketing analyst and data storyteller who can turn numbers into something people actually understand. By bringing together strategic communication and data science, I want to keep exploring how insight and technology can work hand in hand to make ideas real.
             </p>
-            <p>
-              With a background spanning editorial writing, brand strategy, and visual arts,
-              I bring a unique perspective to every project — finding the story hidden in data,
-              the emotion behind a brand, and the decisive moment in a photograph.
-            </p>
-            <p>
-              When I'm not working, you'll find me exploring tea culture, wandering through
-              galleries, or experimenting with new ways to blend technology and art.
-            </p>
-          </div>
+          </article>
 
           {/* News Section */}
           <div className="mt-16">

@@ -1,19 +1,19 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { articles, categories } from "@/data/projects";
+import { getArticleBySlug } from "@/data/articles";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 
 const ArticleDetailPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const article = articles.find((a) => a.id === id);
+  const article = getArticleBySlug(slug);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  }, [id]);
+  }, [slug]);
 
   if (!article) {
     return (
@@ -26,7 +26,6 @@ const ArticleDetailPage = () => {
     );
   }
 
-  const cat = categories.find((c) => c.id === article.tag);
   const normalizedContent = article.content?.replace(/^\s+/, "");
   const firstImageMatch = normalizedContent?.match(/!\[.*?\]\((.*?)\)/);
   const heroImage = firstImageMatch ? firstImageMatch[1] : null;
@@ -48,26 +47,44 @@ const ArticleDetailPage = () => {
             Back to Articles
           </button>
 
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-[10px] tracking-wider px-3 py-1 rounded-full border border-border text-muted-foreground">
-              {cat?.label || article.tag}
-            </span>
-            <span className="text-xs text-muted-foreground">
-              {new Date(article.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </span>
+          <div className="flex items-center gap-3 mb-6 flex-wrap">
+            {article.topics.map((t) => (
+              <span
+                key={t}
+                className="text-[10px] tracking-wider px-3 py-1 rounded-full border border-border text-muted-foreground"
+              >
+                {t}
+              </span>
+            ))}
           </div>
 
           <h1 className="font-serif-cn text-3xl md:text-5xl font-light mb-6">
             {article.title}
           </h1>
 
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            {article.excerpt}
-          </p>
+          <div className="text-sm text-muted-foreground leading-relaxed mb-8 space-y-2">
+            {article.excerpt && <p>{article.excerpt}</p>}
+            <div className="flex flex-wrap gap-x-6 gap-y-1">
+              {article.author && (
+                <p>
+                  <span className="text-foreground/70">Author</span>
+                  <span className="mx-2 text-muted-foreground/60">·</span>
+                  <span className="text-foreground/80">{article.author}</span>
+                </p>
+              )}
+              <p>
+                <span className="text-foreground/70">Published</span>
+                <span className="mx-2 text-muted-foreground/60">·</span>
+                <span className="text-foreground/80">
+                  {new Date(article.published).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </span>
+              </p>
+            </div>
+          </div>
 
           <div className="w-12 h-[1px] bg-primary mb-10" />
 

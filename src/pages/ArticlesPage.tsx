@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { articles, categories } from "@/data/projects";
+import { articles } from "@/data/articles";
 
 const ArticlesPage = () => {
   const navigate = useNavigate();
@@ -26,20 +26,24 @@ const ArticlesPage = () => {
       <section className="px-6 py-12">
         <div className="max-w-2xl mx-auto space-y-0">
           {articles.map((article, i) => {
-            const cat = categories.find((c) => c.id === article.tag);
             return (
               <article
-                key={article.id}
-                onClick={() => navigate(`/article/${article.id}`)}
+                key={article.slug}
+                onClick={() => navigate(`/articles/${article.slug}`)}
                 className="group border-b border-border py-8 first:pt-0 cursor-pointer animate-fade-in hover:bg-muted/30 transition-colors -mx-4 px-4 rounded-lg"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] tracking-wider px-2 py-1 rounded-full border border-border text-muted-foreground">
-                    {cat?.label || article.tag}
-                  </span>
+                  {article.topics.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[10px] tracking-wider px-2 py-1 rounded-full border border-border text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  ))}
                   <span className="text-xs text-muted-foreground">
-                    {new Date(article.date).toLocaleDateString("en-US", {
+                    {new Date(article.published).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",

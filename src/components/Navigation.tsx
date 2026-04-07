@@ -4,7 +4,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const links = [
-    { to: "/#tea", label: "Work" },
+    { to: "/#tea", label: "Home" },
     { to: "/articles", label: "Articles" },
     { to: "/about", label: "About" },
   ];

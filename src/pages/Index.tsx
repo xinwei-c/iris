@@ -27,12 +27,12 @@ const Index = () => {
             height={1080}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background" />
+          <div className="absolute inset-0 bg-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-transparent to-background" />
         </div>
 
         <div className="relative z-10 text-center px-6">
-          <p className="text-sm tracking-[0.3em] text-muted-foreground mb-4 animate-fade-in">
+          <p className="text-sm tracking-[0.3em] text-morandi-pink mb-4 animate-fade-in">
             PORTFOLIO
           </p>
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-light tracking-wide text-[hsl(220,50%,25%)] animate-fade-in" style={{ animationDelay: "0.15s", fontFamily: "'Dancing Script', cursive" }}>

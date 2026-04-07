@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { extractFirstMarkdownImage, stripFirstMarkdownImage } from "@/lib/content-images";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -95,7 +97,43 @@ const ProjectDetailPage = () => {
           {/* Markdown content */}
           {project.content ? (
             <article className="prose prose-neutral max-w-none prose-headings:font-serif-cn prose-headings:font-light prose-headings:text-[hsl(210,60%,72%)] prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-5 prose-p:text-foreground/70 prose-p:leading-[1.9] prose-p:text-base prose-li:text-foreground/70 prose-li:leading-[1.8] prose-strong:text-foreground prose-a:text-primary prose-ol:mt-4 prose-ul:mt-2 prose-ul:ml-4 prose-ol:ml-4">
-              <ReactMarkdown>{contentWithoutHero || ""}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  a: ({ href, children, ...props }) => {
+                    const url = typeof href === "string" ? href : "";
+                    const isPdf = /\.pdf(\?.*)?$/i.test(url);
+                    const isSitePdf = url.startsWith(`${baseUrl}pdfs/`) || url.startsWith("/pdfs/");
+
+                    if (isPdf && isSitePdf) {
+                      return (
+                        <div className="my-6">
+                          <div className="rounded-lg overflow-hidden border border-border bg-muted/20">
+                            <iframe
+                              src={url}
+                              title={typeof children?.[0] === "string" ? children[0] : "PDF preview"}
+                              className="w-full"
+                              style={{ height: 720 }}
+                            />
+                          </div>
+                          <div className="mt-2 text-sm">
+                            <a href={url} className="text-primary underline underline-offset-4" {...props}>
+                              Download / open PDF
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <a href={url} {...props}>
+                        {children}
+                      </a>
+                    );
+                  },
+                }}
+              >
+                {contentWithoutHero || ""}
+              </ReactMarkdown>
             </article>
           ) : (
             <div className="space-y-6">

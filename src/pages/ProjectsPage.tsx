@@ -48,7 +48,7 @@ const ProjectsPage = () => {
                 {currentCategory.label}
               </h1>
               <div className="w-12 h-[1px] bg-primary mx-auto mb-6" />
-              <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base leading-relaxed max-w-2xl mx-auto text-[hsl(210,28%,52%)]">
                 {currentCategory.intro}
               </p>
             </>
