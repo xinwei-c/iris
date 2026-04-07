@@ -35,7 +35,7 @@ const Index = () => {
           <p className="text-sm tracking-[0.3em] text-muted-foreground mb-4 animate-fade-in">
             PORTFOLIO
           </p>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light tracking-wide text-[hsl(340,60%,70%)] animate-fade-in" style={{ animationDelay: "0.15s", fontFamily: "'Dancing Script', cursive" }}>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light tracking-wide text-[hsl(220,50%,25%)] animate-fade-in" style={{ animationDelay: "0.15s", fontFamily: "'Dancing Script', cursive" }}>
             Iris Chen
           </h1>
         </div>
