@@ -415,4 +415,60 @@ We delivered a strategic roadmap connecting sustainability, data analytics, and 
 [Checkout slides](${baseUrl}pdfs/amfam-erbn-final-presentation.pdf)
 `,
   },
+  {
+    id: "21",
+    title: "Develop for Good: involveMINT",
+    description:
+      "Product design for involveMINT with Develop for Good: connecting community mission with a clearer discovery-to-deal flow, dual-role dashboard, and structured messaging.",
+    tags: ["design"],
+    role: "Product Designer",
+    year: "2026",
+    tools: ["Figma", "User Research", "Prototyping"],
+    content: `![EMPATHIZE: user research summary](${baseUrl}images/involvemint-empathize.png)
+
+**Team members:** Lucia Feng, Zeshan Rehan, Christy Long, Rachel Weng, Sarah Roman, Angela Williams, Xinwei Chen
+
+## Introduction
+
+Working alongside a talented team, I served as a Designer for Develop for Good. Our mission was to tackle a business challenge for involveMINT, focusing on how to better connect their community mission with a seamless digital experience.
+
+## Project Challenges
+
+### Solving the context gap
+
+We found that users would start an inquiry, but the details (quantity, price, delivery) would get buried in long, messy chat threads. We had to figure out how to keep the order data visible and structured right inside a casual conversation without making it feel like a cold, rigid spreadsheet.
+
+### Designing for the dual-role user
+
+Most users on involveMINT aren’t just buyers or sellers—they’re both. This created a major UI challenge: How do we design a single dashboard and chat list that helps a business owner manage what they need and what they’re providing simultaneously, without them getting overwhelmed or confused about which "hat" they are wearing?
+
+### Balancing structure with community
+
+involveMINT is rooted in community and trust, not just cold transactions. A major challenge was creating a "structured inquiry form" that felt professional enough to ensure a deal actually happens, but stayed friendly and accessible enough for small, local business owners who aren’t used to corporate procurement software.
+
+## Process
+
+First, we identified the friction. We realized that while involveMINT is great at helping users find opportunities, many deals were dying in the chat phase. Users were losing context, getting confused by unclear workflows, and struggling to move from a simple inquiry to a formal transaction.
+
+Then, we designed for small business owners who act as both buyers and sellers. Our goal was to create a structured, context-preserving communication system that guides these users through the entire pipeline—from the initial Discover phase in the marketplace to the final Transaction and Post-Transaction rating.
+
+We focused on a high-impact scope: a goal-oriented Dashboard, a centralized Notification feed, and a Messaging System and polish the transaction workflow. We specifically designed an in-thread order form to streamline coordination, ensuring that fulfillment methods and credit transfers were pre-filled and painless.
+
+To move fast and maintain clarity, we prioritized a clean light-theme design and iOS-optimized interaction patterns, ensuring the core discovery-to-deal flow was bulletproof before expanding to advanced features.
+
+## The Result
+
+We delivered a comprehensive Figma design system and clickable prototype that transformed a fragmented communication process into a guided, professional pipeline. By solving the context loss issue, our designs provide involveMINT’s users with the structure they need to move from conversation to conversion with confidence. The final handoff included:
+
+- A streamlined "Discovery-to-Deal" flow that reduces manual coordination effort.
+- A centralized Dashboard that surfaces key metrics and setup progress to keep users engaged.
+- A trust-building framework featuring business credibility signals and a post-transaction rating system to strengthen long-term network effects.
+
+[Checkout the Prototype and slides](https://www.figma.com/proto/IEHZ7OVl87JqO0EuFD68Pp/Involvemint-Inc.?node-id=9520-16322&p=f&t=efqWTueqIGSX91T6-1&scaling=scale-down&content-scaling=fixed&page-id=6%3A5&starting-point-node-id=9100%3A18095&show-proto-sidebar=1)
+
+## Checkout slides
+
+[involveMINT Demo Day slide deck (PDF)](${baseUrl}pdfs/involvemint-demo-day-slides.pdf)
+`,
+  },
 ];
