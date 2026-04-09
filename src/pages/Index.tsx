@@ -59,7 +59,8 @@ const Index = () => {
             Choose Your Tea
           </h2>
           <p className="text-sm text-muted-foreground mt-4 max-w-md mx-auto leading-relaxed">
-            Each tea represents a discipline — click a tea bag to explore the corresponding projects and work
+            <span className="block">Each tea represents a discipline.</span>
+            <span className="block mt-1.5">Click a tea bag to see my projects and work.</span>
           </p>
         </div>
 
