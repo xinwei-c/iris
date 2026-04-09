@@ -379,4 +379,40 @@ It was rewarding to turn a personal need into something real. Working with AI an
 The UI is intentionally basic for now; with a design background I may refine it when time allows, but the functionality matches what I set out to build. The app uses free tier AI APIs and credit limits, which constrains public performance; you can still use it as a structured space to record and reflect on interview practice.
 `,
   },
+  {
+    id: "20",
+    title: "American Family Insurance Business Consulting",
+    description:
+      "Working closely with ERBN team members, we completed a consulting project for American Family Insurance focused on optimizing its Corporate Responsibility and sustainability communication strategy.",
+    tags: ["ai", "analytics", "design"],
+    role: "Student Consultant",
+    year: "2026",
+    tools: ["Consulting", "Web Analytics", "ESG Communication"],
+    content: `![Final presentation](${baseUrl}images/amfam-presentation.png)
+
+**Team members:** Qing Wang, Edward Kim, Daisy Huang, Matthew Uy, Evan Strominger, Lanya Yu, Madeline Cooper, Victoria Petrina, Xinwei Chen
+
+## Introduction
+
+Working closely with ERBN team members, we completed a consulting project for American Family Insurance focused on optimizing its Corporate Responsibility and sustainability communication strategy. The project was grounded in the company's 2023-2026 Sustainable Business Framework, emphasizing climate resilience, community advancement, diversity and inclusion, and responsible data and AI.
+
+## Main work
+
+- Conducted comprehensive competitor benchmarking and external SWOT analysis across major industry players (e.g., State Farm, Zurich, Berkshire Hathaway) to identify strategic gaps and best practices, including the use of measurable ESG metrics, data transparency, and emotional storytelling in sustainability reporting.
+- Leveraged web analytics (e.g., bounce rate ~89%, exit rate ~87%) to diagnose critical user experience issues, revealing significant challenges in content discoverability, navigation, and engagement.
+- Developed data-driven recommendations, including a full website redesign proposal to better align digital communication with business strategy, improve stakeholder engagement, and enhance clarity of ESG initiatives.
+- Proposed integrating real-time metrics, clearer narrative structures, and stronger data positioning to reinforce innovation and trust.
+- Additionally contributed to an ecological accounting white paper, exploring the integration of environmental metrics (e.g., carbon emissions, ecosystem services) into financial reporting to improve transparency in risk assessment and sustainability performance.
+
+## Result
+
+We delivered a strategic roadmap connecting sustainability, data analytics, and digital experience to drive stakeholder alignment and strengthen long-term brand positioning.
+
+![Team after the presentation](${baseUrl}images/amfam-team.png)
+
+## Checkout slides
+
+[Checkout slides](${baseUrl}pdfs/amfam-erbn-final-presentation.pdf)
+`,
+  },
 ];
