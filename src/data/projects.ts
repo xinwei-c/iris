@@ -345,36 +345,38 @@ During my internship at Smartly as a Growth Marketing Intern, I volunteered to t
     id: "19",
     title: "InterviewPrep",
     description:
-      "A structured interview practice app with AI follow-ups, configurable depth, live transcript, templates, and session history—built to balance rigidity of notes with the looseness of ad-hoc AI bots.",
+      "A structured interview practice app with AI follow ups, configurable depth, live transcript, templates, and session history; built to balance rigidity of notes with the looseness of ad hoc AI bots.",
     tags: ["ai"],
     role: "Creator",
     year: "2026",
     tools: ["Web", "AI APIs"],
-    content: `## Overview
+    content: `![InterviewPrep](${baseUrl}images/interviewprep.png)
 
-Assisted by AI-based coding, I built an interview prep app for myself.
+## Overview
+
+Assisted by AI based coding, I built an interview prep app for myself.
 
 **Try it:** [InterviewPrep](https://lnkd.in/gWn_aBnG)
 
 As a senior in university, preparing for graduate school or job applications means a lot of interview practice. Previously, I relied on notes and recordings to review my performance, or used AI live bots to simulate interviews. The former felt too rigid; the latter was too loose.
 
-**Idea:** I built this app to balance structure and flexibility. It uses AI to generate follow-up questions, and users can cap how many follow-ups appear so the session stays focused. In real interviews, interviewers often cover multiple facets—for example, in a data science interview they may probe statistical concepts and coding skills in turn. The app reflects that kind of multi-faceted flow.
+**Idea:** I built this app to balance structure and flexibility. It uses AI to generate follow up questions, and users can cap how many follow ups appear so the session stays focused. In real interviews, interviewers often cover multiple facets; for example, in a data science interview they may probe statistical concepts and coding skills in turn. The app reflects that kind of multifaceted flow.
 
 ### How to use it
 
 **Import questions:** Add questions from the control at the top. You can enter them manually or upload a file; the app detects and organizes them. Edit questions in the question dashboard and add tags for easier reference. When the list looks right, save it as a template and import it later.
 
-**During the interview:** Choose the interviewer type so follow-ups match that voice. Set a maximum number of consecutive AI follow-ups (0–5) and a time limit; a timer stays visible on screen. Spoken answers show live on the right. You can skip questions or end the session; actions are captured in a session summary.
+**During the interview:** Choose the interviewer type so follow ups match that voice. Set a maximum number of consecutive AI follow ups (0 to 5) and a time limit; a timer stays visible on screen. Spoken answers show live on the right. You can skip questions or end the session; actions are captured in a session summary.
 
 **After the interview:** Open history to review questions and responses, or export history to keep records and evaluate how you did.
 
 ### What I learned
 
-It was rewarding to turn a personal need into something real. Working with AI and built-in platform features pushed me to understand system structure and how pieces fit together. I practiced writing PRDs and used intuition about what to test—stepping through flows as a user so features actually worked. Choosing what to build (and what not to) mattered for performance and for staying aligned with the product goal.
+It was rewarding to turn a personal need into something real. Working with AI and built in platform features pushed me to understand system structure and how pieces fit together. I practiced writing PRDs and used intuition about what to test, stepping through flows as a user so features actually worked. Choosing what to build (and what not to) mattered for performance and for staying aligned with the product goal.
 
 ### Note
 
-The UI is intentionally basic for now; with a design background I may refine it when time allows, but the functionality matches what I set out to build. The app uses free-tier AI APIs and credit limits, which constrains public performance—but you can still use it as a structured space to record and reflect on interview practice.
+The UI is intentionally basic for now; with a design background I may refine it when time allows, but the functionality matches what I set out to build. The app uses free tier AI APIs and credit limits, which constrains public performance; you can still use it as a structured space to record and reflect on interview practice.
 `,
   },
 ];
