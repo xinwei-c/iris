@@ -53,7 +53,7 @@ export const photoSeries: PhotoSeries[] = [
     title: "Seasons in Kyoto",
     subtitle: "A year in temple gardens",
     description:
-      "Documenting the changing seasons through Kyoto's gardens and temples — the subtle transitions in light, foliage, and atmosphere.",
+      "Documenting the changing seasons through Kyoto's gardens and temples, and the subtle transitions in light, foliage, and atmosphere.",
     year: "2024",
     location: "Kyoto",
     photoCount: 10,

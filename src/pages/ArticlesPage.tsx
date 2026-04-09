@@ -17,8 +17,8 @@ const ArticlesPage = () => {
           </h1>
           <div className="w-12 h-[1px] bg-primary mx-auto mb-6" />
           <p className="text-sm text-muted-foreground leading-relaxed max-w-xl mx-auto">
-            Reflections on data, design, technology, and the spaces between —
-            written with the same care as brewing a good cup of tea.
+            Reflections on data, design, technology, and the spaces between.
+            Written with the same care as brewing a good cup of tea.
           </p>
         </div>
       </section>

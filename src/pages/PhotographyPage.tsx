@@ -140,7 +140,7 @@ const PhotographyPage = () => {
                 >
                   <img
                     src={photo.src}
-                    alt={photo.caption || `${series.title} — ${pi + 1}`}
+                    alt={photo.caption || `${series.title} (${pi + 1})`}
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>

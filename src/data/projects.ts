@@ -244,13 +244,13 @@ The work has been featured by SJMC website.
 
 ![Sheboygan Poster B](${baseUrl}images/she_1.png)
 
-### Business cards — Dark Series
+### Business cards: Dark Series
 
 ![Dark Front](${baseUrl}images/dark_card2.png)
 
 ![Dark Back](${baseUrl}images/dark_card1.png)
 
-### Business cards — Light Series
+### Business cards: Light Series
 
 ![Light Front](${baseUrl}images/light_card1.png)
 
@@ -440,17 +440,17 @@ We found that users would start an inquiry, but the details (quantity, price, de
 
 ### Designing for the dual-role user
 
-Most users on involveMINT aren’t just buyers or sellers—they’re both. This created a major UI challenge: How do we design a single dashboard and chat list that helps a business owner manage what they need and what they’re providing simultaneously, without them getting overwhelmed or confused about which "hat" they are wearing?
+On involveMINT, users typically act as both buyers and sellers. This created a major UI challenge: How do we design a single dashboard and chat list that helps a business owner manage what they need and what they’re providing simultaneously, without them getting overwhelmed or confused about which "hat" they are wearing?
 
 ### Balancing structure with community
 
-involveMINT is rooted in community and trust, not just cold transactions. A major challenge was creating a "structured inquiry form" that felt professional enough to ensure a deal actually happens, but stayed friendly and accessible enough for small, local business owners who aren’t used to corporate procurement software.
+involveMINT is rooted in community and trust. A major challenge was creating a "structured inquiry form" that felt professional enough to ensure a deal actually happens, but stayed friendly and accessible enough for small, local business owners who aren’t used to corporate procurement software.
 
 ## Process
 
 First, we identified the friction. We realized that while involveMINT is great at helping users find opportunities, many deals were dying in the chat phase. Users were losing context, getting confused by unclear workflows, and struggling to move from a simple inquiry to a formal transaction.
 
-Then, we designed for small business owners who act as both buyers and sellers. Our goal was to create a structured, context-preserving communication system that guides these users through the entire pipeline—from the initial Discover phase in the marketplace to the final Transaction and Post-Transaction rating.
+Then, we designed for small business owners who act as both buyers and sellers. Our goal was to create a structured, context-preserving communication system that guides these users through the entire pipeline, from the initial Discover phase in the marketplace to the final Transaction and Post-Transaction rating.
 
 We focused on a high-impact scope: a goal-oriented Dashboard, a centralized Notification feed, and a Messaging System and polish the transaction workflow. We specifically designed an in-thread order form to streamline coordination, ensuring that fulfillment methods and credit transfers were pre-filled and painless.
 
